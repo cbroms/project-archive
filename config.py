@@ -11,7 +11,7 @@ Where the compiled files will be stored
 """
 PATH_TO_OUTPUT_FILES = "project/"
 
-PATH_TO_BUILD = "build/"
+PATH_TO_BUILD = "docs/"
 PATH_TO_STATIC_FILES = "static/"
 
 DEV_PORT = 8000
