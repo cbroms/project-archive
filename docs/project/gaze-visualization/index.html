@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <title>Gaze Visualization - Archive</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/static/style.css" />
+        <script src="/static/main.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <a href="/" style="font-size: 600%">~</a>
+            <a href="/" style="left: 15px; top: 20px;">CB</a>
+        </div>
+        <div id='content'><h1>Gaze Visualization</h1>
+<p><img alt="" src="/static/images/gaze-visualization/edit-5.gif" /></p>
+<p>My description from the <a href="http://cmuems.com/2018/60212f/chromsan/10/12/chromsan-body/">original post</a>:</p>
+<p>For this project, I created a visualization of the space where the gaze of two characters in conversation meet. As the characters look at or away from one another, a shape is created between them that grows over the course of a scene.</p>
+<p>I used ml5.js and PoseNet to track the characters in the videos and p5.js to draw the shape between them. The field of view for each character is determined by a line drawn from their ear to a point between their eyes and nose. The line is extended outward at two different angles to create a triangle. Both characters' fields of vision are checked for intersecting points and the shape drawn between them is progressively built from these points, layered over and over.</p>
+<iframe src="https://player.vimeo.com/video/294702146" width="600" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+<iframe src="https://player.vimeo.com/video/294701280" width="600" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+<p>I decided to use scenes from movies mainly because of the one scene from There Will Be Blood where Daniel and Eli engage in this intense standoff, where Daniel talks down to Eli in both the dialogue and his body language. Eli's gaze falls to the ground while Daniel's stays fixed on Eli. This scene worked particularly well, as there is a good amount of change in their gazes throughout, and the shape that emerges between the two is quite interesting. I searched for more scenes with dialogue shot from the side, and came up with a number of them, mostly from P.T. Anderson and Tarantino, the only two directors that seem to use it regularly. I ended up using clips from <em>Kill Bill Vol.I</em>, <em>There Will Be Blood</em>, <em>Boogie Nights</em>, <em>The Big Lebowski</em>, and <em>Inglourious Basterds</em>.</p>
+<iframe src="https://player.vimeo.com/video/294702122" width="600" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+<p>I initially wanted to create one shape between the characters and have their gaze pull it around the screen, but I didn't like the result. So I created a fill for the area where the gazes intersected, and then I created multiple fills that built up to create a complex shape that ends up looking like a brushstroke. There are definitely limitations to this method though; the camera has to be relatively still, there can't be too many characters, and the scene has to be pretty short. Drawing all the shapes on every draw call in addition to running PoseNet in realtime is quite computationally demanding. Even with a good graphics card the video can start to lag; the frames definitely start to drop by the end of some of the longer scenes. Overall, I'm pretty happy with the result, but there is certainly more optimization to be done.</p><div><em>This is an archived page. Find recent projects <a href='https://christianbroms.com'>on my website</a></em></div></div>
+        <div id="footer">
+            <span id="copy"></span>
+            <a href="/">All Archived Projects</a>
+            <a href="https://christianbroms.com">Recent Projects</a>
+            <a href="https://christianbroms.com/about">About and Contact</a>
+        </div>
+    </body>
+</html>

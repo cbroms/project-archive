@@ -1,5 +1,5 @@
 #content {
-    max-width: 600px;
+    max-width: 700px;
     min-height: calc(100vh - 75px);
     margin: 0 auto;
     margin-top: 75px;
@@ -8,7 +8,7 @@
 }
 
 img {
-    max-width: 600px;
+    max-width: 700px;
     width: 100%;
 }
 
@@ -24,11 +24,8 @@ h3 {
     font-size: 200%;
 }
 
-p,
-a,
-span,
-ul {
-    font-size: 150%;
+p {
+    font-size: 125%;
 }
 
 body {
@@ -38,6 +35,7 @@ body {
 
 .list-link {
     margin: 40px 0;
+    font-size: 150%;
 }
 
 #footer {

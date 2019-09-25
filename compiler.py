@@ -13,6 +13,8 @@ from config import *
 # all the output paths, to use for links on the index page
 new_paths = []
 
+footer_html = "<div><em>This is an archived page. Find recent projects <a href='https://christianbroms.com'>on my website</a></em></div>"
+
 """
 Get the file names in the source directory 
 """
@@ -49,7 +51,7 @@ def create_final_file(rel_path, html):
                           errors="xmlcharrefreplace"
     )
     output_file.write(html)
-    print("Compiled file '{}' to '{}'".format(PATH_TO_SOURCE_FILES + rel_path, new_path))
+    print("Compiled file '{}'".format(PATH_TO_SOURCE_FILES + rel_path))
     return link_path
 
 """
@@ -58,7 +60,8 @@ Add the source html to the template
 def add_source_to_template(html, meta):
     with open(PATH_TO_TEMPLATE, 'r') as template:
         text = template.read()
-    html = "<div id='content'>" + html + "</div>"
+
+    html = "<div id='content'>" + html + footer_html + "</div>"
     return text.replace("[[ content ]]", html).replace("[[ title ]]", meta["title"] + " - " + SITE_NAME)
 
 """
