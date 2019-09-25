@@ -1,12 +1,12 @@
 import markdown
 import frontmatter
 import codecs
-import os
-import sys
+import os, sys
 import shutil, errno
 
 import http.server
 import socketserver
+
 
 from config import * 
 
@@ -58,6 +58,7 @@ Add the source html to the template
 def add_source_to_template(html, meta):
     with open(PATH_TO_TEMPLATE, 'r') as template:
         text = template.read()
+    html = "<div id='content'>" + html + "</div>"
     return text.replace("[[ content ]]", html).replace("[[ title ]]", meta["title"] + " - " + SITE_NAME)
 
 """
@@ -83,8 +84,10 @@ def create_index():
     # generate the html link for each of the pages
     html_links = ""
     for link_path, meta in new_paths:
-        html_link = '<div><a href="{}">{}</a></div>'.format(link_path, meta["title"])
+        date = meta["date"].strftime("%b %d, %Y")
+        html_link = '<div class="list-link"><a href="{}">{}</a></div>'.format(link_path, date + " — " + meta["title"])
         html_links += html_link
+    html_links = "<div id='content'>" + html_links + "</div>"
 
     # insert the generated html into the tempate
     with open(PATH_TO_TEMPLATE, 'r') as template:
@@ -138,4 +141,4 @@ if __name__ == "__main__":
             httpd = socketserver.TCPServer(("", DEV_PORT), Handler)
             print("Serving from '{}' at port {}".format(PATH_TO_BUILD, DEV_PORT))
             httpd.serve_forever() 
-            
+

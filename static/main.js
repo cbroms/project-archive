@@ -1,3 +1,8 @@
-console.log("yes");
+// set the copyright notice with the current year
+window.addEventListener("DOMContentLoaded", event => {
+    console.log("hey");
 
-const a = "y";
+    document.getElementById(
+        "copy"
+    ).innerHTML = `Copyright &copy; ${new Date().getFullYear()} Christian Broms`;
+});
