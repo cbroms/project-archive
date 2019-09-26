@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <title>Flygenius Version 2 - Archive</title>
+        <meta name="author" content="Christian Broms" />
+        <meta name='desription' content='Christian Broms' archived projects. A collection of websites, visualizations, photographs, and designs.'>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://use.typekit.net/ald2mmj.css" />
+        <link rel="stylesheet" href="/static/style.css" />
+        <script src="/static/main.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <a
+                href="/"
+                style="font-size: 1200%; left: 10px; top: -40px; font-weight: 500;"
+                >*</a
+            >
+            <!-- <a href="/" style="left: 15px; top: 20px;">~CB</a> -->
+        </div>
+        <div id='content'><h1>Flygenius Version 2</h1>
+<p>This is the second iteration of Flygenius. The first version was a project for <a href="http://humanaiclass.org">an HCI class at CMU</a> I took in fall 2018. More information about the original project can be <a href="https://archive.christianbroms.com/project/flygenius-v1">found here</a>.</p>
+<p>This project had three main parts: a redesign of the machine learning model making the flight time predictions, a redesign of the website interface and information architecture, and the development of the new site.</p>
+<h2>The Machine Learning Model</h2>
+<p>I'm not much of a machine learning expert, so this part was quite a bit of new exploration for me.</p>
+<p>I started by switching out the regression model for a classifier. To see the full process, check out <a href="https://github.com/CBR0MS/flight-time-model-data/blob/master/visualization/v2/v2Modeling.md">the Jupyter notebook I wrote detailing the change</a>.</p>
+<p>I started by adding a few new features to each row, including likelihood of ontime departure, both for the relevant airline and airport. These data are calculated by taking the mean departure time across all flights for a given location, airline, and time.</p>
+<p>For classification, I created two categories: <em>late</em> and <em>not late</em>, with a cutoff of 10 minutes for a flight to be classified as late. I assigned the appropriate class to all the training data and ran it through the model. The classifier was able to achieve 90.79% accuracy on test data. I was fairly pleased at the \~20% improvement in accuracy over the previous method.</p>
+<h2>The Information Architecture and Interface</h2>
+<p>One of the main things I liked about my previous design is the scarcity of extraneous information. Everything that's displayed is there for a reason.</p>
+<p>The goal of the website is very simple, so I kept the UI as clean as possible. I added a few new features, such as ability to compare multiple airlines for a given route, as well as support for non-direct flights. The inputs for these new features were worked into the old input section.</p>
+<p><img alt="" src="/static/images/flygenius-v2/fg4.png" title="Revised information input UI" /></p>
+<p>I also did some experimentation with the background of the site, to add some visual interest. I added a gradient that gently animates around the edge of the screen, as well as a background that shifts color and imagery based on the time of day. The colors in the gradient change over the course of the day, so there is a very natural shift from the brighter background and colors during the day to the "dark mode" at night.</p>
+<p><img alt="" src="/static/images/flygenius-v2/fg1.png" title="The new frontpage during the day" /></p>
+<p><img alt="" src="/static/images/flygenius-v2/fg5.png" title="The new frontpage at night" /></p>
+<p>The final change was to the display of the prediction and statistical information. Each piece of data is grouped under a relevant header, with information about the route and airports on the left and a comparison of airlines on the right.</p>
+<p>It was important that when the sections are collapsed information is still conveyed to the user. For this reason, each airline's section is ordered from best to worst, and the predicted chance of ontime arrival is displayed. There's a clear hierarchy of airlines, running from the top to the bottom of the page.</p>
+<p><img alt="" src="/static/images/flygenius-v2/fg2.png" title="Closed panels" /></p>
+<p>Clicking on each section reveals more information about the route, airport, or flight and a small visualization of the probabilities of on-time departure and arrival.</p>
+<p><img alt="" src="/static/images/flygenius-v2/fg6.png" title="Open panels" /></p>
+<p>This project's repository can be <a href="https://github.com/CBR0MS/flight-time-model">found on GitHub</a>.</p>
+<p>Check out the site at <a href="https://flygeni.us">flygeni.us</a></p>
+<h2>API</h2>
+<p>As part of the rework, I created an API with the Django REST framework. It contains entries for 12 major airlines, 320 airports, and a total of 5,597 routes. Check it out at <a href="https://api.flygeni.us/docs">api.flygeni.us</a>.</p><div><em>This is an archived page. Find recent projects <a href='https://christianbroms.com'>on my website</a></em></div></div>
+        <div id="footer">
+            <span id="copy"></span>
+            <a href="/">All Archived Projects</a>
+            <a href="https://christianbroms.com">Recent Projects</a>
+            <a href="https://christianbroms.com/about">About and Contact</a>
+        </div>
+    </body>
+</html>
