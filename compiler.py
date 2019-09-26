@@ -55,6 +55,17 @@ def create_final_file(rel_path, html):
     return link_path
 
 """
+Crate the meta html tags for the page 
+"""
+def create_page_meta(meta):
+    try:
+        desc = meta["description"]
+    except:
+        desc = SITE_DESCRIPTION
+    desc_html = "<meta name='desription' content='{}'>".format(desc)
+    return desc_html
+
+"""
 Add the source html to the template
 """
 def add_source_to_template(html, meta):
@@ -62,7 +73,7 @@ def add_source_to_template(html, meta):
         text = template.read()
 
     html = "<div id='content'>" + html + footer_html + "</div>"
-    return text.replace("[[ content ]]", html).replace("[[ title ]]", meta["title"] + " - " + SITE_NAME)
+    return text.replace("[[ content ]]", html).replace("[[ title ]]", meta["title"] + " - " + SITE_NAME).replace("[[ meta ]]", create_page_meta(meta))
 
 """
 Convert all markdown files in the source directory to html
@@ -95,7 +106,7 @@ def create_index():
     # insert the generated html into the tempate
     with open(PATH_TO_TEMPLATE, 'r') as template:
         html = template.read()
-    html = html.replace("[[ content ]]", html_links).replace("[[ title ]]", SITE_NAME)
+    html = html.replace("[[ content ]]", html_links).replace("[[ title ]]", SITE_NAME).replace("[[ meta ]]", create_page_meta({}))
 
     # save the new html as the index 
     output_file = codecs.open(PATH_TO_BUILD + "index.html", "w",
@@ -142,6 +153,6 @@ if __name__ == "__main__":
             os.chdir(PATH_TO_BUILD)
             Handler = http.server.SimpleHTTPRequestHandler
             httpd = socketserver.TCPServer(("", DEV_PORT), Handler)
-            print("Serving from '{}' at port {}".format(PATH_TO_BUILD, DEV_PORT))
+            print("\n\nServing from '{}' at port {}\n\n".format(PATH_TO_BUILD, DEV_PORT))
             httpd.serve_forever() 
 

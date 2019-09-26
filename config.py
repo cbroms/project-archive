@@ -1,6 +1,8 @@
 
 SITE_NAME = "Archive"
 
+SITE_DESCRIPTION = "Christian Broms' archived projects. A collection of websites, visualizations, photographs, and designs."
+
 """
 Where the markdown pages are stored 
 """
