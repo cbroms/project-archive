@@ -24,6 +24,10 @@ h3 {
     font-size: 200%;
 }
 
+iframe {
+    margin-bottom: 20px;
+}
+
 p,
 ul,
 ol {
@@ -56,11 +60,11 @@ body {
 }
 
 #header a {
-    z-index: -1000;
+    z-index: 1000;
     text-decoration: none;
     color: black;
     position: fixed;
     font-size: 250%;
     font-weight: bold;
-    color: #999999;
+    color: #d85f56;
 }
