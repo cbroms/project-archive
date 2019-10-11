@@ -101,7 +101,8 @@ def create_index():
         date = meta["date"].strftime("%b %d, %Y")
         html_link = '<div class="list-link"><a href="{}">{}</a></div>'.format(link_path, date + " — " + meta["title"])
         html_links += html_link
-    html_links = "<div id='content'>" + html_links + "</div>"
+    header = "<h1>All Projects</h1>"
+    html_links = "<div id='content'>" + header + html_links + "</div>"
 
     # insert the generated html into the tempate
     with open(PATH_TO_TEMPLATE, 'r') as template:
