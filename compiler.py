@@ -14,6 +14,7 @@ from config import *
 new_paths = []
 
 footer_html = "<div><em>This is an archived page. Find recent projects <a href='https://christianbroms.com'>on my website</a></em></div>"
+header_html = "<h1>All Projects</h1><p>All of the projects that I've worked on, from small to large. Photography, video, physical fabrication, installations, websites, graphic design, renderings, browser extensions, generative text, experimental media, and plenty of others.</p>"
 
 """
 Get the file names in the source directory 
@@ -101,8 +102,7 @@ def create_index():
         date = meta["date"].strftime("%b %d, %Y")
         html_link = '<div class="list-link"><a href="{}">{}</a></div>'.format(link_path, date + " — " + meta["title"])
         html_links += html_link
-    header = "<h1>All Projects</h1>"
-    html_links = "<div id='content'>" + header + html_links + "</div>"
+    html_links = "<div id='content'>" + header_html + html_links + "</div>"
 
     # insert the generated html into the tempate
     with open(PATH_TO_TEMPLATE, 'r') as template:
