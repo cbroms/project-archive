@@ -1,6 +1,7 @@
 ---
-title: "Sentitude: Sentiment Analysis Browser Extension"
+title: "Sentitude: Sentiment Analysis"
 date: 2018-07-01
+category: "Extension"
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Clock Pong Game"
 date: 2018-09-20
-
+category: "Game"
 ---
 
 # Clock Pong Game

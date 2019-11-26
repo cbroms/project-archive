@@ -1,7 +1,7 @@
 ---
 title: "Gaze Visualization"
 date: 2018-10-12
-
+category: "Experiment"
 ---
 
 # Gaze Visualization

@@ -1,6 +1,7 @@
 ---
 title: "Whispers: a Telematic Environment"
 date: 2018-09-27
+category: "Website"
 
 ---
 

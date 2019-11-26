@@ -1,6 +1,7 @@
 ---
 title: "Night Landscape"
 date: 2016-03-07
+category: "Photography"
 
 ---
 

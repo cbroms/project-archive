@@ -1,7 +1,7 @@
 ---
 title: "From Above: The Cascades"
 date: 2018-08-13
-
+category: "Video"
 ---
 
 # From Above: The Cascades 

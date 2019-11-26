@@ -1,7 +1,7 @@
 ---
 title: "Looping Geometric GIF"
 date: 2018-09-13
-
+category: "Experiment"
 ---
 
 # Loop

@@ -1,6 +1,7 @@
 ---
 title: "Your/My Room"
 date: 2017-11-29
+category: "Installation"
 
 ---
 

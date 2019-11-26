@@ -1,7 +1,7 @@
 ---
 title: "Colma St & Gate 5 Rd"
 date: 2017-02-09
-
+category: "Photography"
 ---
 
 # Colma St & Gate 5 Rd

@@ -1,6 +1,7 @@
 ---
 title: "The Bay: a Pinhole Series"
 date: 2017-03-24
+category: "Photography"
 
 ---
 

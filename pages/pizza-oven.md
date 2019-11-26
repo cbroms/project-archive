@@ -1,6 +1,7 @@
 ---
 title: "Building a Pizza Oven"
 date: 2018-03-19
+category: "Fabrication"
 
 ---
 

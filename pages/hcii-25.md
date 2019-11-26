@@ -1,7 +1,7 @@
 ---
 title: "HCII 25th Anniversary Website"
 date: 2019-09-15
-
+category: "Website"
 ---
 
 # HCII 25th Anniversary Website

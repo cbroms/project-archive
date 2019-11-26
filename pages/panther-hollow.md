@@ -1,7 +1,7 @@
 ---
 title: "Little People on Pather Hollow Lake"
 date: 2019-02-11
-
+category: "Photography"
 ---
 
 # Little People on Panther Hollow Lake

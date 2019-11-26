@@ -1,7 +1,7 @@
 ---
 title: "Extended Encyclopedia of Philosophy"
 date: 2018-11-16
-
+category: "Experiment"
 ---
 
 # The Extended Encyclopedia of Philosophy

@@ -1,7 +1,7 @@
 ---
 title: "Sleepy Hollow Walk"
 date: 2016-10-28
-
+category: "Photography"
 ---
 
 # Sleepy Hollow

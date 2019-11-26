@@ -1,6 +1,7 @@
 ---
 title: "41 Sunsets Over Interstate 480"
 date: 2019-09-01
+category: "Photography"
 ---
 
 # 41 Sunsets Over Interstate 480

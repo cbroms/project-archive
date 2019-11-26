@@ -1,6 +1,7 @@
 ---
 title: "Flygenius Version 1"
 date: 2018-12-13
+category: "Website"
 ---
 
 # Flygenius Version 1

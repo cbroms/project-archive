@@ -1,6 +1,7 @@
 ---
 title: "Stratus: AR Weather Visualization"
 date: 2019-08-15
+category: "App"
 ---
 # Stratus
 

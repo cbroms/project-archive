@@ -1,7 +1,7 @@
 ---
 title: "From Above: Sierra Nevada Mountains"
 date: 2018-07-27
-
+category: "Video"
 ---
 
 # From Above: Sierra Nevada Mountains

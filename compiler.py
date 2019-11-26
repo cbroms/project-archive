@@ -100,7 +100,7 @@ def create_index():
     html_links = ""
     for link_path, meta in new_paths:
         date = meta["date"].strftime("%b %d, %Y")
-        html_link = '<div class="list-link"><a href="{}">{}</a></div>'.format(link_path, date + " — " + meta["title"])
+        html_link = '<div class="list-link"><a href="{}">{} <sup>{}</sup></a></div>'.format(link_path, date + " — " + meta["title"], '(' + meta["category"].lower() + ')')
         html_links += html_link
     html_links = "<div id='content'>" + header_html + html_links + "</div>"
 

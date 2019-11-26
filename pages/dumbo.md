@@ -1,7 +1,7 @@
 ---
 title: "Plumy Tale Music Video"
 date: 2018-02-03
-
+category: "Video"
 ---
 
 # Plumy Tale: the Music Video
