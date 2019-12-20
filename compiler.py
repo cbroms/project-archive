@@ -114,6 +114,8 @@ def create_index():
     for link_path, meta, img in new_paths:
         formattedTime = '\'' + str(meta["date"]) + '\''
         date = meta["date"].strftime("%b %d, %Y")
+        # somethings weird with the styling so i'm taking this out for now 
+        img = ""
         if img != "":
             html_link = '<div class="list-link"><a onmouseenter="showImg({}, this)" onmouseout="hideImg({}, this)" href="{}" >{} <sup>{}</sup></a></div><img class="feature-img" id="{}" src="{}">'.format(formattedTime, formattedTime, link_path, date + " — " + meta["title"], '(' + meta["category"].lower() + ')', str(meta["date"]), img)
         else:
