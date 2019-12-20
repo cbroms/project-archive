@@ -1,7 +1,7 @@
 import markdown
 import frontmatter
 import codecs
-import os, sys
+import os, sys, re
 import shutil, errno
 
 import http.server
@@ -87,8 +87,21 @@ def decode_all_source_files():
     for rel_path in rel_paths:
         html, meta = decode_source_file(rel_path)
         html = add_source_to_template(html, meta)
+        img = get_first_img(html)
         link_path = create_final_file(rel_path, html)
-        new_paths.append((link_path, meta))
+        new_paths.append((link_path, meta, img))
+
+
+"""
+Get the first image link in a page 
+"""
+def get_first_img(html):
+    result = re.search('<img alt="" src="(.*)" />', html)
+    if (result):
+        return result.group(1)
+    return ""
+
+
 
 """
 Create an index with a list of all files
@@ -98,9 +111,13 @@ def create_index():
     new_paths.sort(key = lambda x: x[1]["date"], reverse=True)
     # generate the html link for each of the pages
     html_links = ""
-    for link_path, meta in new_paths:
+    for link_path, meta, img in new_paths:
+        formattedTime = '\'' + str(meta["date"]) + '\''
         date = meta["date"].strftime("%b %d, %Y")
-        html_link = '<div class="list-link"><a href="{}">{} <sup>{}</sup></a></div>'.format(link_path, date + " — " + meta["title"], '(' + meta["category"].lower() + ')')
+        if img != "":
+            html_link = '<div class="list-link"><a onmouseenter="showImg({}, this)" onmouseout="hideImg({}, this)" href="{}" >{} <sup>{}</sup></a></div><img class="feature-img" id="{}" src="{}">'.format(formattedTime, formattedTime, link_path, date + " — " + meta["title"], '(' + meta["category"].lower() + ')', str(meta["date"]), img)
+        else:
+            html_link = '<div class="list-link"><a href="{}" >{} <sup>{}</sup></a></div>'.format( link_path, date + " — " + meta["title"], '(' + meta["category"].lower() + ')')
         html_links += html_link
     html_links = "<div id='content'>" + header_html + html_links + "</div>"
 

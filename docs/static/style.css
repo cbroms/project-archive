@@ -49,6 +49,15 @@ body {
     font-size: 150%;
 }
 
+.feature-img {
+    background-color: hsl(217, 83%, 38%);
+    position: absolute;
+    display: none;
+    width: 300px;
+    right: 20px;
+    border: 1px solid hsl(217, 83%, 38%);
+}
+
 #footer {
     max-width: 910px;
     width: 100%;
@@ -70,5 +79,5 @@ body {
     position: fixed;
     font-size: 250%;
     font-weight: bold;
-    color: #d85f56;
+    color: hsl(217, 83%, 38%);
 }
