@@ -29,7 +29,8 @@ For the augmented reality environment, it was important that _just_ that data th
 
 By building on people's pre-existing understanding of what weather looks like physically, we could create something that was _instantaneously understandable_ without any additional training.
 
-![ ](/static/images/stratus/stratus.gif)
+![ ](/static/images/stratus/stratus.png)
+
 
 It was also important to consider how people would interact with the AR environment. After some testing, we were sure to provide obvious interaction methods such as panning, scaling and tapping.
 
@@ -47,4 +48,4 @@ I designed and implemented a UI to present the fields from the METAR in their or
 
 Our final iOS and Android app integrates a number of realtime data sources to create one simple visualization of the weather at any airport in the United States, to promote instantaneous interpretation of the current conditions.
 
-![ ](/static/images/stratus/stratus.png)
+![ ](/static/images/stratus/stratus.gif)
