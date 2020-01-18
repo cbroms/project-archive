@@ -72,8 +72,9 @@ Add the source html to the template
 def add_source_to_template(html, meta):
     with open(PATH_TO_TEMPLATE, 'r') as template:
         text = template.read()
-
-    html = "<div id='content'>" + html + footer_html + "</div>"
+    date = meta["date"].strftime("%b %d, %Y")
+    dateHtml = "<div id='date'>" + date + "</div>"
+    html = "<div id='content'>" + dateHtml + html + footer_html + "</div>"
     return text.replace("[[ content ]]", html).replace("[[ title ]]", meta["title"] + " - " + SITE_NAME).replace("[[ meta ]]", create_page_meta(meta))
 
 """
