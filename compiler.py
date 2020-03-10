@@ -24,12 +24,20 @@ def get_source_file_paths():
     return filter(lambda x: ".md" in x, files)
 
 """
-Convert a markdown file to html, given the name of the file
+Convert a markdown file to html, given the name of the file. 
+Add a link around every img tag to the src of the image. 
 """
 def decode_source_file(rel_path):
     input_file = frontmatter.load(PATH_TO_SOURCE_FILES + rel_path)
     text = input_file.content
-    return (markdown.markdown(text), input_file)
+    html = markdown.markdown(text)
+    imgs = re.findall(r'<img([\w\W]+?)>', html)
+    for img in imgs:
+        img = "<img{}>".format(img)
+        src = re.search(r'"\/([\w\W]+?)\"', img).group(0)
+        a_tag = "<a href={}>{}</a>".format(src, img)
+        html = html.replace(img, a_tag)
+    return (html, input_file)
 
 """
 Create the output file given a path and the compiled html
