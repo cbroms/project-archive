@@ -1,5 +1,5 @@
 ---
-title: "Storytelling Conceputal Model"
+title: "Storytelling Conceptual Model"
 date: 2020-03-02
 category: "Design Artifact"
 ---
