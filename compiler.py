@@ -3,12 +3,14 @@ import frontmatter
 import codecs
 import os, sys, re
 import shutil, errno
-
+import glob
 import http.server
 import socketserver
 
-
+from PIL import Image
 from config import * 
+
+Image.MAX_IMAGE_PIXELS = 933120000
 
 # all the output paths, to use for links on the index page
 new_paths = []
@@ -33,10 +35,13 @@ def decode_source_file(rel_path):
     html = markdown.markdown(text)
     imgs = re.findall(r'<img([\w\W]+?)>', html)
     for img in imgs:
-        img = "<img{}>".format(img)
-        src = re.search(r'"\/([\w\W]+?)\"', img).group(0)
-        a_tag = "<a href={}>{}</a>".format(src, img)
-        html = html.replace(img, a_tag)
+        img_big = img
+        img_small = img.split(".")[0] + "-thumb.png\""
+        img_small = "<img{}>".format(img_small)
+        src_small = re.search(r'"\/([\w\W]+?)\"', img_small).group(0).replace("\"", "")
+        src_big = re.search(r'"\/([\w\W]+?)\"', img_big).group(0)
+        a_tag = "<a class='image' style='background-image: url({});' data-image-full={} href={}>{}</a>".format(src_small, src_big, src_big, img_small)
+        html = html.replace("<img{}>".format(img), a_tag)
     return (html, input_file)
 
 """
@@ -149,6 +154,23 @@ def create_index():
 Copy the static files to the build directory 
 """
 def copy_static_files():
+
+    # make thumbnails 
+    image_list = []
+    images = glob.glob(PATH_TO_STATIC_FILES + 'images/**/*.jpg')
+    images.extend(glob.glob(PATH_TO_STATIC_FILES + 'images/**/*.jpeg'))
+    images.extend(glob.glob(PATH_TO_STATIC_FILES + 'images/**/*.png'))
+
+    size = 128, 128
+
+    for filename in images:
+        if "-thumb" not in filename:
+            im=Image.open(filename)
+            im.thumbnail(size)
+            print("Saved Thumbnail: " + filename.split('.')[0] + "-thumb.png")
+            im.save(filename.split('.')[0] + "-thumb.png", "PNG")
+
+
     dest = PATH_TO_BUILD + PATH_TO_STATIC_FILES
     try:
         if os.path.isdir(dest):
@@ -158,6 +180,9 @@ def copy_static_files():
         if exc.errno == errno.ENOTDIR:
             shutil.copy(PATH_TO_STATIC_FILES, dest)
         else: raise
+
+    
+
 
 """
 Prepare the build directory: compile the source files to html, 

@@ -81,3 +81,22 @@ body {
     font-weight: bold;
     color: hsl(217, 83%, 38%);
 }
+
+.image {
+    display: block;
+    min-height: 20rem; /* layout hack */
+    background: #fff center center no-repeat;
+    background-size: cover;
+    filter: blur(3px); /* blur the lowres image */
+}
+
+.image > img {
+    display: block;
+    width: 100%;
+    opacity: 0; /* visually hide the img element */
+}
+
+.image.is-loaded {
+    filter: none; /* remove the blur on fullres image */
+    transition: filter 1s;
+}
