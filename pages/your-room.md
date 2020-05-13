@@ -2,7 +2,7 @@
 title: "Your/My Room"
 date: 2017-11-29
 category: "Installation"
-
+image: "/static/images/your-room/web_8.jpg"
 ---
 
 # Your/My Room

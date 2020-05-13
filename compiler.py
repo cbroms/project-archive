@@ -37,10 +37,12 @@ def decode_source_file(rel_path):
     for img in imgs:
         img_big = img
         img_small = img.split(".")[0] + "-thumb.png\""
-        img_small = "<img{}>".format(img_small)
+       
         src_small = re.search(r'"\/([\w\W]+?)\"', img_small).group(0).replace("\"", "")
         src_big = re.search(r'"\/([\w\W]+?)\"', img_big).group(0)
-        a_tag = "<a class='image' style='background-image: url({});' data-image-full={} href={}>{}</a>".format(src_small, src_big, src_big, img_small)
+
+        img_small = "<img style='background-image: url({})' data-src={} {}>".format(src_small, src_big, img_small)
+        a_tag = "<a href={}>{}</a>".format(src_big, img_small)
         html = html.replace("<img{}>".format(img), a_tag)
     return (html, input_file)
 
@@ -101,20 +103,8 @@ def decode_all_source_files():
     for rel_path in rel_paths:
         html, meta = decode_source_file(rel_path)
         html = add_source_to_template(html, meta)
-        img = get_first_img(html)
         link_path = create_final_file(rel_path, html)
-        new_paths.append((link_path, meta, img))
-
-
-"""
-Get the first image link in a page 
-"""
-def get_first_img(html):
-    result = re.search('<img alt="" src="(.*)" />', html)
-    if (result):
-        return result.group(1)
-    return ""
-
+        new_paths.append((link_path, meta))
 
 
 """
@@ -125,11 +115,14 @@ def create_index():
     new_paths.sort(key = lambda x: x[1]["date"], reverse=True)
     # generate the html link for each of the pages
     html_links = ""
-    for link_path, meta, img in new_paths:
+    for link_path, meta in new_paths:
         formattedTime = '\'' + str(meta["date"]) + '\''
         date = meta["date"].strftime("%b %d, %Y")
-        # somethings weird with the styling so i'm taking this out for now 
+
         img = ""
+        if "image" in meta:
+            img = meta["image"]
+        # somethings weird with the styling so i'm taking this out for now 
         if img != "":
             html_link = '<div class="list-link"><a onmouseenter="showImg({}, this)" onmouseout="hideImg({}, this)" href="{}" >{} <sup>{}</sup></a></div><img class="feature-img" id="{}" src="{}">'.format(formattedTime, formattedTime, link_path, date + " — " + meta["title"], '(' + meta["category"].lower() + ')', str(meta["date"]), img)
         else:
@@ -200,8 +193,6 @@ def compile():
 
 if __name__ == "__main__":
 
-    compile()
-
     for arg in sys.argv:
         if (arg == "serve"):
             os.chdir(PATH_TO_BUILD)
@@ -209,4 +200,6 @@ if __name__ == "__main__":
             httpd = socketserver.TCPServer(("", DEV_PORT), Handler)
             print("\n\nServing from '{}' at port {}\n\n".format(PATH_TO_BUILD, DEV_PORT))
             httpd.serve_forever() 
+
+    compile()
 

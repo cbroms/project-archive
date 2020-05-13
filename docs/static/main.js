@@ -1,44 +1,41 @@
 // set the copyright notice with the current year
 window.addEventListener("DOMContentLoaded", (event) => {
-	console.log("hey");
-
 	document.getElementById(
 		"copy"
 	).innerHTML = `Copyright &copy; ${new Date().getFullYear()} Christian Broms`;
 });
 
-// const showImg = (id, elt) => {
-// 	document.getElementById(id).style.top = `${
-// 		window.pageYOffset + elt.getBoundingClientRect().top
-// 	}px`;
-// 	document.getElementById(id).style.display = "block";
-// };
+// progressively load the images
+//https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Loading
+window.onload = function () {
+	let imagesToLoad = document.querySelectorAll("img[data-src]");
 
-// const hideImg = (id, elt) => {
-// 	document.getElementById(id).style.display = "none";
-// };
+	const loadImages = (image) => {
+		image.setAttribute("src", image.getAttribute("data-src"));
+		image.onload = () => {
+			image.removeAttribute("data-src");
+		};
+	};
 
-window.addEventListener("load", function () {
-	lazyLoad();
-});
-
-function lazyLoad() {
-	const images = document.querySelectorAll(".image");
-
-	// loop over each card image
-	images.forEach(function (image) {
-		var image_url = image.getAttribute("data-image-full");
-		var content = image.querySelector("img");
-
-		// change the src of the content image to load the new high res photo
-		content.src = image_url;
-
-		// listen for load event when the new photo is finished loading
-		content.addEventListener("load", function () {
-			// swap out the visible background image with the new fully downloaded photo
-			image.style.backgroundImage = "url(" + image_url + ")";
-			// add a class to remove the blur filter to smoothly transition the image change
-			image.className = image.className + " is-loaded";
-		});
+	imagesToLoad.forEach((img) => {
+		loadImages(img);
 	});
+};
+
+let imageElt;
+
+function followCursor(event) {
+	imageElt.style.display = "block";
+	imageElt.style.left = `${event.clientX}px`;
+	imageElt.style.top = `${event.clientY}px`;
+}
+
+function showImg(id, elt) {
+	imageElt = document.getElementById(id);
+	document.body.addEventListener("mousemove", followCursor);
+}
+
+function hideImg(id, elt) {
+	imageElt.style.display = "none";
+	document.body.removeEventListener("mousemove", followCursor);
 }

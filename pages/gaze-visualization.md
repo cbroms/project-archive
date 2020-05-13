@@ -2,6 +2,7 @@
 title: "Gaze Visualization"
 date: 2018-10-12
 category: "Experiment"
+image: "/static/images/gaze-visualization/edit-5.gif"
 ---
 
 # Gaze Visualization
@@ -18,7 +19,7 @@ I used ml5.js and PoseNet to track the characters in the videos and p5.js to dra
 
 <iframe src="https://player.vimeo.com/video/294701280" width="600" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-I decided to use scenes from movies mainly because of the one scene from There Will Be Blood where Daniel and Eli engage in this intense standoff, where Daniel talks down to Eli in both the dialogue and his body language. Eli's gaze falls to the ground while Daniel's stays fixed on Eli. This scene worked particularly well, as there is a good amount of change in their gazes throughout, and the shape that emerges between the two is quite interesting. I searched for more scenes with dialogue shot from the side, and came up with a number of them, mostly from P.T. Anderson and Tarantino, the only two directors that seem to use it regularly. I ended up using clips from *Kill Bill Vol.I*, *There Will Be Blood*, *Boogie Nights*, *The Big Lebowski*, and *Inglourious Basterds*.
+I decided to use scenes from movies mainly because of the one scene from There Will Be Blood where Daniel and Eli engage in this intense standoff, where Daniel talks down to Eli in both the dialogue and his body language. Eli's gaze falls to the ground while Daniel's stays fixed on Eli. This scene worked particularly well, as there is a good amount of change in their gazes throughout, and the shape that emerges between the two is quite interesting. I searched for more scenes with dialogue shot from the side, and came up with a number of them, mostly from P.T. Anderson and Tarantino, the only two directors that seem to use it regularly. I ended up using clips from _Kill Bill Vol.I_, _There Will Be Blood_, _Boogie Nights_, _The Big Lebowski_, and _Inglourious Basterds_.
 
 <iframe src="https://player.vimeo.com/video/294702122" width="600" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 

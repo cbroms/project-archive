@@ -2,10 +2,10 @@
 title: "Night Landscape"
 date: 2016-03-07
 category: "Photography"
-
+image: "/static/images/night-landscape/NL_1.jpg"
 ---
 
-# Night Landscape 
+# Night Landscape
 
 ![](/static/images/night-landscape/NL_1.jpg)
 
@@ -30,4 +30,3 @@ category: "Photography"
 ![](/static/images/night-landscape/NL_11.jpg)
 
 ![](/static/images/night-landscape/NL_12.jpg)
-

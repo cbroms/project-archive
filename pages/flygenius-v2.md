@@ -2,6 +2,7 @@
 title: "Flygenius Version 2"
 date: 2019-04-21
 category: "Website"
+image: "/static/images/flygenius-v2/fg1.png"
 ---
 
 # Flygenius Version 2

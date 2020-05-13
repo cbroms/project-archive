@@ -49,9 +49,14 @@ body {
     font-size: 150%;
 }
 
+.list-link a {
+    padding: 20px 0;
+}
+
 .feature-img {
+    pointer-events: none;
     background-color: hsl(217, 83%, 38%);
-    position: absolute;
+    position: fixed;
     display: none;
     width: 300px;
     right: 20px;
@@ -82,21 +87,11 @@ body {
     color: hsl(217, 83%, 38%);
 }
 
-.image {
-    display: block;
-    min-height: 20rem; /* layout hack */
-    background: #fff center center no-repeat;
-    background-size: cover;
-    filter: blur(3px); /* blur the lowres image */
+img[data-src] {
+    filter: blur(0.2em);
 }
 
-.image > img {
-    display: block;
-    width: 100%;
-    opacity: 0; /* visually hide the img element */
-}
-
-.image.is-loaded {
-    filter: none; /* remove the blur on fullres image */
-    transition: filter 1s;
+img {
+    filter: blur(0em);
+    transition: filter 1.5s;
 }

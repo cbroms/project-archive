@@ -2,7 +2,7 @@
 title: "Sentitude: Sentiment Analysis"
 date: 2018-07-01
 category: "Extension"
-
+image: "/static/images/sentitude/select_p.gif"
 ---
 
 # Sentitude

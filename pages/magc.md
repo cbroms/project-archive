@@ -2,6 +2,7 @@
 title: "MAGC Interactive Map"
 date: 2019-05-13
 category: "Website"
+image: "/static/images/magc/magcmap.png"
 ---
 
 # Marin Art and Garden Center Interactive Map

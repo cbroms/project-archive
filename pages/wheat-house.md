@@ -2,7 +2,7 @@
 title: "Wheat Field House Visualization"
 date: 2017-07-14
 category: "Video"
-
+image: "/static/images/wheat-house/wheat.gif"
 ---
 
 # Wheat Field House

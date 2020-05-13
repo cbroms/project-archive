@@ -2,6 +2,7 @@
 title: "Flygenius Version 1"
 date: 2018-12-13
 category: "Website"
+image: "/static/images/flygenius-v1/og1.jpg"
 ---
 
 # Flygenius Version 1
@@ -22,5 +23,3 @@ The next two days I spent designing and implementing the site. I trained the mod
 ![](/static/images/flygenius-v1/og1.jpg "The old frontpage UI")
 
 ![](/static/images/flygenius-v1/og2.jpg "The old visualization/dashboard page")
-
-

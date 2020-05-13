@@ -2,12 +2,12 @@
 title: "Extended Encyclopedia of Philosophy"
 date: 2018-11-16
 category: "Experiment"
+image: "/static/images/encyc-of-phil/excerpt.png"
 ---
 
 # The Extended Encyclopedia of Philosophy
 
 A collection of twelve new -isms. A sample chapter can be viewed [here](http://cmuems.com/2018/60212f/wp-content/uploads/2018/11/0-chromsan.pdf).
-
 
 ![](/static/images/encyc-of-phil/excerpt.png)
 
@@ -25,7 +25,7 @@ I then collected the pages for each of the original philosophies used and parsed
 
 ![](/static/images/encyc-of-phil/para1.png)
 
-I wasn't a huge fan of the fact that the original philosophers were kept in the descriptions of the new terms, as it roots them a bit too much in the two original philosophies. So, I wrote a [short script](https://github.com/cbroms/interactive-comp/blob/master/generative-text/mixer.py) in python to mix up the names and places a bit. For this, I needed a way to identify individuals like Karl Popper in the example above. There is a really nice package built on NLTK that I've worked with before that [does just that](https://spacy.io/usage/linguistic-features#entity-types).  This created text like:
+I wasn't a huge fan of the fact that the original philosophers were kept in the descriptions of the new terms, as it roots them a bit too much in the two original philosophies. So, I wrote a [short script](https://github.com/cbroms/interactive-comp/blob/master/generative-text/mixer.py) in python to mix up the names and places a bit. For this, I needed a way to identify individuals like Karl Popper in the example above. There is a really nice package built on NLTK that I've worked with before that [does just that](https://spacy.io/usage/linguistic-features#entity-types). This created text like:
 
 ![](/static/images/encyc-of-phil/para2.png)
 

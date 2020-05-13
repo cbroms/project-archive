@@ -2,7 +2,9 @@
 title: "Stratus: AR Weather Visualization"
 date: 2019-08-15
 category: "App"
+image: "/static/images/stratus/stratus.png"
 ---
+
 # Stratus
 
 One of the major challenges faced when trying to analyze a realtime and continuous stream of data is how to structure and visualize it in a way that results in near-instantaneous understanding. There are methods of data visualization that can display particular aspects of a dataset, such as a chart or graph. The problem is that they are limited in terms of _what kind of data can be visualized_, as well as _the speed someone is able to understand_ the data being represented.
@@ -30,7 +32,6 @@ For the augmented reality environment, it was important that _just_ that data th
 By building on people's pre-existing understanding of what weather looks like physically, we could create something that was _instantaneously understandable_ without any additional training.
 
 ![ ](/static/images/stratus/stratus.png)
-
 
 It was also important to consider how people would interact with the AR environment. After some testing, we were sure to provide obvious interaction methods such as panning, scaling and tapping.
 

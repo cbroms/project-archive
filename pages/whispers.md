@@ -2,7 +2,7 @@
 title: "Whispers: a Telematic Environment"
 date: 2018-09-27
 category: "Website"
-
+image: "/static/images/whispers/edit-4.gif"
 ---
 
 # Whispers
@@ -13,7 +13,7 @@ In short, this is the game of telephone for random people on the internet with t
 
 ![](/static/images/whispers/edit-4.gif)
 
-I wanted to implement this game (sometimes called "Chinese whispers," evidently) with text instead of voice while preserving the same quality of randomness that it has. I initially thought about using a reCAPTCHA style system to mess up the text, but that would have been too easy to read. Messing with the unicode made it much more difficult to read the messages, and I found <a href="https://github.com/combatwombat/Lunicode.js">a nice library</a> for doing that. What's interesting about the game telephone is that everyone has an important role in playing since they each pass the message along, but all the players are equal in the sense that everyone's job is the same, except for one. In the original game, the person that starts the message is somewhat more important, but I got rid of this dynamic by having each visitor enter their own message, which is then interpreted by the other visitors.  In my version, all the players have the same role.
+I wanted to implement this game (sometimes called "Chinese whispers," evidently) with text instead of voice while preserving the same quality of randomness that it has. I initially thought about using a reCAPTCHA style system to mess up the text, but that would have been too easy to read. Messing with the unicode made it much more difficult to read the messages, and I found <a href="https://github.com/combatwombat/Lunicode.js">a nice library</a> for doing that. What's interesting about the game telephone is that everyone has an important role in playing since they each pass the message along, but all the players are equal in the sense that everyone's job is the same, except for one. In the original game, the person that starts the message is somewhat more important, but I got rid of this dynamic by having each visitor enter their own message, which is then interpreted by the other visitors. In my version, all the players have the same role.
 
 ![](/static/images/whispers/edit-5.gif)
 
