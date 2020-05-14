@@ -36,7 +36,7 @@ def decode_source_file(rel_path):
     imgs = re.findall(r'<img([\w\W]+?)>', html)
     for img in imgs:
         img_big = img
-        img_small = img.split(".")[0] + "-thumb.png\""
+        img_small = img.split(".")[0] + "-thumb.jpg\""
        
         src_small = re.search(r'"\/([\w\W]+?)\"', img_small).group(0).replace("\"", "")
         src_big = re.search(r'"\/([\w\W]+?)\"', img_big).group(0)
@@ -124,9 +124,9 @@ def create_index():
             img = meta["image"]
             if ".gif" not in img:
                 # get the mid size thumbnail 
-                img = img.split('.')[0] + "-mid.png"
+                img = img.split('.')[0] + "-mid.jpg"
             else:
-                img = img.split('.')[0] + "-gif-mid.png"
+                img = img.split('.')[0] + "-gif-mid.jpg"
 
         if img != "":
             html_link = '<div class="list-link"><a onmouseenter="showImg({}, this)" onmouseout="hideImg({}, this)" href="{}" >{} <sup>{}</sup></a></div><img class="feature-img" id="{}" data-src="{}">'.format(formattedTime, formattedTime, link_path, date + " — " + meta["title"], '(' + meta["category"].lower() + ')', str(meta["date"]), img)
@@ -163,24 +163,24 @@ def create_all_thumbnails():
     images.extend(glob.glob(PATH_TO_STATIC_FILES + 'images/**/*.png'))
 
     size_small = 128, 128
-    size_mid =  256, 256
+    size_mid =  350, 350
     size_gif = 320, 240
 
     for index, filename in enumerate(images):
-        # if "-thumb" in filename or "-mid" in filename:
-        #     os.remove(filename)
+        if "-thumb" in filename or "-mid" in filename:
+            os.remove(filename)
 
         if "-thumb" not in filename and "-mid" not in filename:
             # make sure the thumbnails haven't already been generated 
           #  if (index < len(images) - 1 and "-thumb" not in images[index + 1] and "-mid" not in images[index + 1]) or (index == len(images) - 1):
             im=Image.open(filename)
             im.thumbnail(size_mid)
-            print("Saved Thumbnail Mid: " + filename.split('.')[0] + "-mid.png")
-            im.save(filename.split('.')[0] + "-mid.png", "PNG")
+            print("Saved Thumbnail Mid: " + filename.split('.')[0] + "-mid.jpg")
+            im.convert('RGB').save(filename.split('.')[0] + "-mid.jpg", "JPEG", quality=30, optimize=True, progressive=True)
             im=Image.open(filename)
             im.thumbnail(size_small)
-            print("Saved Thumbnail Small: " + filename.split('.')[0] + "-thumb.png")
-            im.save(filename.split('.')[0] + "-thumb.png", "PNG")
+            print("Saved Thumbnail Small: " + filename.split('.')[0] + "-thumb.jpg")
+            im.convert('RGB').save(filename.split('.')[0] + "-thumb.jpg", "JPEG", quality=90, optimize=True, progressive=True)
             
 
 
@@ -197,8 +197,8 @@ def create_all_thumbnails():
                 # save small preview image
                 sm = frames[0]
                 sm.thumbnail(size_mid)
-                print("Saved Gif Thumbnail Mid: " + filename.split('.')[0] + "-gif-mid.png")
-                sm.save(filename.split('.')[0] + "-gif-mid.png", "PNG")
+                print("Saved Gif Thumbnail Mid: " + filename.split('.')[0] + "-gif-mid.jpg")
+                sm.convert('RGB').save(filename.split('.')[0] + "-gif-mid.jpg", "JPEG",  quality=30, optimize=True, progressive=True)
 
                 # save small gif
                 frames = create_gif_thumbnails(frames, size_mid)

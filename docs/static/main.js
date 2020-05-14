@@ -35,7 +35,7 @@ function showImg(id, elt) {
 	if (imageElt.src.includes("-gif")) {
 		imageElt.src = imageElt.src
 			.replace("-gif-mid", "")
-			.replace(".png", ".gif");
+			.replace(".jpg", ".gif");
 	}
 	document.body.addEventListener("mousemove", followCursor);
 }
