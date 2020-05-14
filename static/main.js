@@ -32,6 +32,11 @@ function followCursor(event) {
 
 function showImg(id, elt) {
 	imageElt = document.getElementById(id);
+	if (imageElt.src.includes("-gif")) {
+		imageElt.src = imageElt.src
+			.replace("-gif-mid", "")
+			.replace(".png", ".gif");
+	}
 	document.body.addEventListener("mousemove", followCursor);
 }
 

@@ -6,13 +6,13 @@ A web archive of everything I've built.
 
 The site is basic static HTML and CSS. It's built from markdown files with `compiler.py`. If you want to play around with the compiler, make sure you have the python packages `markdown` and `python-frontmatter` installed.
 
-Build the files:
+Build the files and images then serve:
 
 ```shell
-python compiler.py
+python compiler.py compile-pages compile-images serve
 ```
 
-Serve the files:
+Or, just serve the files:
 
 ```shell
 python compiler.py serve

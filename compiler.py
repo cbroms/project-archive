@@ -7,7 +7,7 @@ import glob
 import http.server
 import socketserver
 
-from PIL import Image
+from PIL import Image, ImageSequence
 from config import * 
 
 Image.MAX_IMAGE_PIXELS = 933120000
@@ -122,9 +122,14 @@ def create_index():
         img = ""
         if "image" in meta:
             img = meta["image"]
-        # somethings weird with the styling so i'm taking this out for now 
+            if ".gif" not in img:
+                # get the mid size thumbnail 
+                img = img.split('.')[0] + "-mid.png"
+            else:
+                img = img.split('.')[0] + "-gif-mid.png"
+
         if img != "":
-            html_link = '<div class="list-link"><a onmouseenter="showImg({}, this)" onmouseout="hideImg({}, this)" href="{}" >{} <sup>{}</sup></a></div><img class="feature-img" id="{}" src="{}">'.format(formattedTime, formattedTime, link_path, date + " — " + meta["title"], '(' + meta["category"].lower() + ')', str(meta["date"]), img)
+            html_link = '<div class="list-link"><a onmouseenter="showImg({}, this)" onmouseout="hideImg({}, this)" href="{}" >{} <sup>{}</sup></a></div><img class="feature-img" id="{}" data-src="{}">'.format(formattedTime, formattedTime, link_path, date + " — " + meta["title"], '(' + meta["category"].lower() + ')', str(meta["date"]), img)
         else:
             html_link = '<div class="list-link"><a href="{}" >{} <sup>{}</sup></a></div>'.format( link_path, date + " — " + meta["title"], '(' + meta["category"].lower() + ')')
         html_links += html_link
@@ -143,10 +148,13 @@ def create_index():
     output_file.write(html)
     print("Created index file '{}'".format(PATH_TO_BUILD + "index.html"))
 
-"""
-Copy the static files to the build directory 
-"""
-def copy_static_files():
+def create_gif_thumbnails(frames, size_gif):
+    for frame in frames:
+        thumbnail = frame.copy()
+        thumbnail.thumbnail(size_gif, Image.ANTIALIAS)
+        yield thumbnail
+
+def create_all_thumbnails():
 
     # make thumbnails 
     image_list = []
@@ -154,16 +162,56 @@ def copy_static_files():
     images.extend(glob.glob(PATH_TO_STATIC_FILES + 'images/**/*.jpeg'))
     images.extend(glob.glob(PATH_TO_STATIC_FILES + 'images/**/*.png'))
 
-    size = 128, 128
+    size_small = 128, 128
+    size_mid =  256, 256
+    size_gif = 320, 240
 
-    for filename in images:
-        if "-thumb" not in filename:
+    for index, filename in enumerate(images):
+        # if "-thumb" in filename or "-mid" in filename:
+        #     os.remove(filename)
+
+        if "-thumb" not in filename and "-mid" not in filename:
+            # make sure the thumbnails haven't already been generated 
+          #  if (index < len(images) - 1 and "-thumb" not in images[index + 1] and "-mid" not in images[index + 1]) or (index == len(images) - 1):
             im=Image.open(filename)
-            im.thumbnail(size)
-            print("Saved Thumbnail: " + filename.split('.')[0] + "-thumb.png")
+            im.thumbnail(size_mid)
+            print("Saved Thumbnail Mid: " + filename.split('.')[0] + "-mid.png")
+            im.save(filename.split('.')[0] + "-mid.png", "PNG")
+            im=Image.open(filename)
+            im.thumbnail(size_small)
+            print("Saved Thumbnail Small: " + filename.split('.')[0] + "-thumb.png")
             im.save(filename.split('.')[0] + "-thumb.png", "PNG")
+            
 
 
+    gifs = glob.glob(PATH_TO_STATIC_FILES + 'images/**/*.gif')
+
+    for index, filename in enumerate(gifs):
+
+        if "-mid" not in filename:
+            # make sure the thumbnails haven't already been generated 
+            if (index < len(images) - 1 and "-mid" not in images[index + 1]) or (index == len(images) - 1):
+                im = Image.open(filename)
+                frames = ImageSequence.Iterator(im)
+
+                # save small preview image
+                sm = frames[0]
+                sm.thumbnail(size_mid)
+                print("Saved Gif Thumbnail Mid: " + filename.split('.')[0] + "-gif-mid.png")
+                sm.save(filename.split('.')[0] + "-gif-mid.png", "PNG")
+
+                # save small gif
+                frames = create_gif_thumbnails(frames, size_mid)
+                om = next(frames)
+                om.info = im.info
+                print("Saved Gif Mid: " + filename.split('.')[0] + "-mid.gif")
+                om.save(filename.split('.')[0] + "-mid.gif", save_all=True, append_images=list(frames))
+
+
+"""
+Copy the static files to the build directory 
+"""
+def copy_static_files():
     dest = PATH_TO_BUILD + PATH_TO_STATIC_FILES
     try:
         if os.path.isdir(dest):
@@ -174,32 +222,31 @@ def copy_static_files():
             shutil.copy(PATH_TO_STATIC_FILES, dest)
         else: raise
 
-    
-
 
 """
 Prepare the build directory: compile the source files to html, 
 create an index file, and copy the static files
 """
-def compile():
-    print("Compiling files from '{}' to '{}'...".format(PATH_TO_SOURCE_FILES, PATH_TO_BUILD + PATH_TO_OUTPUT_FILES))
-    decode_all_source_files()
-    create_index()
-    print("Copying static files from '{}' to '{}'...".format(PATH_TO_STATIC_FILES, PATH_TO_BUILD + PATH_TO_STATIC_FILES))
-    copy_static_files()
-    print("Build complete!")
-
-
-
 if __name__ == "__main__":
 
-    for arg in sys.argv:
-        if (arg == "serve"):
-            os.chdir(PATH_TO_BUILD)
-            Handler = http.server.SimpleHTTPRequestHandler
-            httpd = socketserver.TCPServer(("", DEV_PORT), Handler)
-            print("\n\nServing from '{}' at port {}\n\n".format(PATH_TO_BUILD, DEV_PORT))
-            httpd.serve_forever() 
+    if "compile-pages" in sys.argv:
+        print("Compiling files from '{}' to '{}'...".format(PATH_TO_SOURCE_FILES, PATH_TO_BUILD + PATH_TO_OUTPUT_FILES))
+        decode_all_source_files()
+        create_index()
 
-    compile()
+        if "compile-images" in sys.argv:
+            print("Creating image thumbnails")
+            create_all_thumbnails()
+
+        print("Copying static files from '{}' to '{}'...".format(PATH_TO_STATIC_FILES, PATH_TO_BUILD + PATH_TO_STATIC_FILES))
+        copy_static_files()
+        print("Build complete!")
+
+    if "serve" in sys.argv:
+        os.chdir(PATH_TO_BUILD)
+        Handler = http.server.SimpleHTTPRequestHandler
+        httpd = socketserver.TCPServer(("", DEV_PORT), Handler)
+        print("\n\nServing from '{}' at port {}\n\n".format(PATH_TO_BUILD, DEV_PORT))
+        httpd.serve_forever() 
+
 
