@@ -1,4 +1,32 @@
+:root {
+    --body: hsl(217, 15%, 97%);
+    --main-type: hsl(217, 15%, 17%);
+    --accent: hsl(217, 83%, 38%);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --body: hsl(217, 15%, 8%);
+        --main-type: hsl(217, 15%, 90%);
+        --accent: hsl(217, 83%, 70%);
+    }
+
+    img:not([src*=".svg"]) {
+        filter: grayscale(10%);
+    }
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 #content {
+    color: var(--main-type);
     max-width: 700px;
     min-height: calc(100vh - 75px);
     margin: 0 auto;
@@ -8,7 +36,7 @@
 }
 
 body {
-    background-color: #f7f7f7;
+    background-color: var(--body);
 }
 
 img {
@@ -39,8 +67,8 @@ ol {
 }
 
 body {
-    /*font-family: -apple-system, BlinkMacSystemFont, sans-serif;*/
-    font-family: neue-haas-unica, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    /*font-family: neue-haas-unica, sans-serif;*/
     margin: 0;
 }
 
@@ -55,12 +83,12 @@ body {
 
 .feature-img {
     pointer-events: none;
-    background-color: hsl(217, 83%, 38%);
+    background-color: var(--accent);
     position: fixed;
     display: none;
     width: 300px;
     right: 20px;
-    border: 1px solid hsl(217, 83%, 38%);
+    border: 2px solid var(--accent);
 }
 
 #footer {
@@ -68,6 +96,7 @@ body {
     width: 100%;
     margin: 0 auto;
     margin-top: 75px;
+    color: var(--main-type);
 }
 
 #footer a,
@@ -80,11 +109,10 @@ body {
 #header a {
     z-index: 1000;
     text-decoration: none;
-    color: black;
     position: fixed;
     font-size: 250%;
     font-weight: bold;
-    color: hsl(217, 83%, 38%);
+    color: var(--accent);
 }
 
 img[data-src] {

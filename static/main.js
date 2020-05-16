@@ -3,11 +3,18 @@ window.addEventListener("DOMContentLoaded", (event) => {
 	document.getElementById(
 		"copy"
 	).innerHTML = `Copyright &copy; ${new Date().getFullYear()} Christian Broms`;
+
+	const chars = ["!", "?", ";", ":", ".", ",", "—", "(", ")"];
+	const rc = () => {
+		return chars[Math.floor(Math.random() * chars.length)];
+	};
+	const header = document.getElementById("header-link");
+	header.innerHTML = rc() + rc() + rc();
 });
 
 // progressively load the images
 //https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Loading
-window.onload = function () {
+window.onload = function() {
 	let imagesToLoad = document.querySelectorAll("img[data-src]");
 
 	const loadImages = (image) => {
@@ -25,9 +32,11 @@ window.onload = function () {
 let imageElt;
 
 function followCursor(event) {
-	imageElt.style.display = "block";
-	imageElt.style.left = `${event.clientX}px`;
-	imageElt.style.top = `${event.clientY}px`;
+	if (!("ontouchstart" in window)) {
+		imageElt.style.display = "block";
+		imageElt.style.left = `${event.clientX}px`;
+		imageElt.style.top = `${event.clientY}px`;
+	}
 }
 
 function showImg(id, elt) {
