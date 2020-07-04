@@ -82,12 +82,21 @@ def create_page_meta(meta):
     return desc_html
 
 """
+Convert the date to a date string and add "now" if the project is current 
+"""
+def parse_date(meta):
+    date = meta["date"].strftime("%b %d, %Y")
+    if "now" in meta:
+       date = "In progress"
+    return date
+
+"""
 Add the source html to the template
 """
 def add_source_to_template(html, meta):
     with open(PATH_TO_TEMPLATE, 'r') as template:
         text = template.read()
-    date = meta["date"].strftime("%b %d, %Y")
+    date = parse_date(meta)
     dateHtml = "<div id='date'>" + date + "</div>"
     html = "<div id='content'>" + dateHtml + html + footer_html + "</div>"
     return text.replace("[[ content ]]", html).replace("[[ title ]]", meta["title"] + " - " + SITE_NAME).replace("[[ meta ]]", create_page_meta(meta))
@@ -111,13 +120,29 @@ def decode_all_source_files():
 Create an index with a list of all files
 """
 def create_index():
+    old = []
+    new = []
+    # remove separate the recent from old pages 
+    for link_path, meta in new_paths:
+        if "now" in meta:
+            new.append((link_path, meta))
+        else:
+            old.append((link_path, meta))
     # sort the pages by date
-    new_paths.sort(key = lambda x: x[1]["date"], reverse=True)
+    old.sort(key = lambda x: x[1]["date"], reverse=True)
+    new.sort(key = lambda x: x[1]["date"], reverse=True)
+    # join the two lists back together to the newest are on top 
+    rev_paths = new + old 
+
     # generate the html link for each of the pages
     html_links = ""
-    for link_path, meta in new_paths:
+    for link_path, meta in rev_paths:
         formattedTime = '\'' + str(meta["date"]) + '\''
-        date = meta["date"].strftime("%b %d, %Y")
+        date = parse_date(meta)
+
+        first_col = "<td class='col1'>{}</td>".format(date)
+        second_col = "<td class='col2'>{}</td>".format(meta["title"])
+        third_col = "<td class='col3'>{}</td>".format( meta["category"].title())
 
         img = ""
         if "image" in meta:
@@ -129,11 +154,11 @@ def create_index():
                 img = img.split('.')[0] + "-gif-mid.jpg"
 
         if img != "":
-            html_link = '<div class="list-link"><a onmouseenter="showImg({}, this)" onmouseout="hideImg({}, this)" href="{}" >{} <sup>{}</sup></a></div><img class="feature-img" id="{}" data-src="{}">'.format(formattedTime, formattedTime, link_path, date + " — " + meta["title"], '(' + meta["category"].lower() + ')', str(meta["date"]), img)
-        else:
-            html_link = '<div class="list-link"><a href="{}" >{} <sup>{}</sup></a></div>'.format( link_path, date + " — " + meta["title"], '(' + meta["category"].lower() + ')')
+            html_link = '<tr class="list-link" onmouseover="showImg({}, this)" onmouseout="hideImg({}, this)" onclick="window.location.pathname=\'{}\' " >{} {} {}</tr><img class="feature-img" id="{}" data-src="{}">'.format(formattedTime, formattedTime, link_path, first_col, second_col, third_col, str(meta["date"]), img)
         html_links += html_link
-    html_links = "<div id='content'>" + header_html + html_links + "</div>"
+
+    table_top = "<tr><th>Date</th><th>Project</th><th class='col3'>Type</th></tr>"
+    html_links = "<div id='content'>" + header_html + "<table>" + table_top + html_links + "</table></div>"
 
     # insert the generated html into the tempate
     with open(PATH_TO_TEMPLATE, 'r') as template:

@@ -1,5 +1,5 @@
 ---
-title: "WikiViz: Prototyping Parallel Browsing"
+title: "WikiViz: Parallel Browsing"
 date: 2020-05-12
 category: "Website"
 image: "/static/images/wikiviz/wikiviz.gif"

@@ -1,0 +1,20 @@
+---
+title: "Pith Blog and Rainflame Landing"
+date: 2020-05-18
+category: "website"
+image: "/static/images/pith-blog/rainflame.gif"
+---
+
+# Pith Blog 
+
+To track the progress of [Pith](/project/pith), we're posting weekly updates on a blog. In order to do this, we needed a nice simple blog, not some ridiculous overkill Medium page. I built a small static site that takes markdown pages and renders individual post pages and an index page. Probably the fanciest part is the light/dark mode button. It can be found at [pithblog.rainflame.com](https://pithblog.rainflame.com), and the code can be [found on GitHub](https://github.com/rainflame/pith-blog). 
+
+![](/static/images/pith-blog/light.png)
+
+![](/static/images/pith-blog/dark.png)
+
+# Rainflame Landing
+
+At the same time, I designed a landing page for Rainflame, mainly as a redirect to Pith. It uses V4.js a shader rendering library I wrote last summer. The rainflame site can be found at [rainflame.com](https://rainflame.com/) and the code can be [found on GitHub](https://github.com/rainflame/rainflame-site). 
+
+![](/static/images/pith-blog/rainflame.gif)

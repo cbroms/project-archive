@@ -13,4 +13,4 @@ An OSC wrapper for the Tobii Eye Tracker 4C, written in openFrameworks with the 
 
 Stream eye position data to programs running on different machines on your network.
 
-This project is open source; find it [on GitHub](https://github.com/rainflame/V4.js).
+This project is open source; find it [on GitHub](https://github.com/cbroms/GazeOSC).

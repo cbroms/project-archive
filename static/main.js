@@ -4,13 +4,37 @@ window.addEventListener("DOMContentLoaded", (event) => {
 		"copy"
 	).innerHTML = `Copyright &copy; ${new Date().getFullYear()} Christian Broms`;
 
-	const chars = ["!", "?", ";", ":", ".", ",", "—", "(", ")"];
-	const rc = () => {
-		return chars[Math.floor(Math.random() * chars.length)];
-	};
 	const header = document.getElementById("header-link");
-	header.innerHTML = rc() + rc() + rc();
+	header.innerHTML = generateRandomEmote();
 });
+
+const generateRandomEmote = () => {
+	// get a random member of the array
+	const r = (arr) => {
+		return arr[Math.floor(Math.random() * arr.length)];
+	};
+
+	const style1 = () => {
+		const mouths = [")", "O", "D", "P", "/", "]", "|", "3"];
+		const eyes = [":", ";"];
+		const noses = ["-", "*", "~", "", "", ""];
+		return r(eyes) + r(noses) + r(mouths);
+	};
+
+	const style2 = () => {
+		const leftSides = ["(", "<(", "\\(", "—("];
+		const eyes = ["o", "O", "-", "X", "T", "*", "@", "^", "~", "!"];
+		const mouths = ["o", "_", ".", "x"];
+		const rightSides = [")", ")>", ")/", ")—"];
+
+		const ey = r(eyes);
+		return r(leftSides) + ey + r(mouths) + ey + r(rightSides);
+	};
+
+	const styles = [style1, style2];
+
+	return r(styles)();
+};
 
 // progressively load the images
 //https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Loading
