@@ -1,4 +1,3 @@
-    
 ---
 title: "Zoom Morsels"
 date: 2020-04-30
