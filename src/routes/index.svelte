@@ -23,7 +23,7 @@
 
 <div>
   <h1>Christian's Project Archive</h1>
-  <p>This is a repository of nearly all the projects I've worked on over the past few years. It's mostly a mix of websites, games, experiments, and other random articles of interest.</p>
+  <p>This is a repository of nearly all the projects I've worked on over the past few years. It's mostly a mix of websites, games, experiments, and other assorted articles of interest.</p>
   <ViewPicker {view} {changeView}/>
   <hr>
   <div class="content">

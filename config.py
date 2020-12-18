@@ -1,4 +1,4 @@
 
 
 
-PATH_TO_STATIC_FILES = "static/"
+PATH_TO_STATIC_FILES = "static/static/"

@@ -32,6 +32,7 @@
 		width: 55px;
 		display: flex;
 		justify-content: space-between;
+		margin-top: 50px;
 	}
 
 	.list{
