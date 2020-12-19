@@ -5,8 +5,6 @@ category: "Experiment"
 image: "/static/images/gaze-narratives/debug.gif"
 ---
 
-# Gaze Narratives
-
 A series of narratives that emerge based on peoples gaze across an image. Find the [full description here](https://courses.ideate.cmu.edu/60-461/s2020/cbromsandrew-cmu-edu/02/27/typology-of-fixation-narratives/).
 
 How do people create narratives through where they look and what they choose to fixate on? As people look at an image, there are brief moments where they fixate on certain areas of it:

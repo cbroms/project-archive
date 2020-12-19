@@ -5,8 +5,6 @@ category: "Website"
 image: "/static/images/whispers/edit-4.gif"
 ---
 
-# Whispers
-
 My description of the project from [the original post](http://cmuems.com/2018/60212f/chromsan/09/27/chromsan-telematic/):
 
 In short, this is the game of telephone for random people on the internet with text instead of audio.

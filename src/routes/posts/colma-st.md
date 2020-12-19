@@ -5,8 +5,6 @@ category: "Photography"
 image: "/static/images/colma-st/MU_1.jpg"
 ---
 
-# Colma St & Gate 5 Rd
-
 This is a series of photographs I created in 2016 and early 2017 for a project documenting the industrial areas in the bay area. The series grew out of an [earlier project](/project/sleepy-hollow) I did documenting the suburbs where I grew up.
 
 ![](/static/images/colma-st/MU_1.jpg)

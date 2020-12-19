@@ -1,11 +1,9 @@
 ---
 title: "GazeOSC"
 date: 2020-03-01
-category: "application"
+category: "Software"
 image: "/static/images/gaze-osc/demo.gif"
 ---
-
-# GazeOSC
 
 ![](/static/images/gaze-osc/demo.gif)
 

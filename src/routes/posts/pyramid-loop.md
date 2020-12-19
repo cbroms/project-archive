@@ -5,8 +5,6 @@ category: "Experiment"
 image: "/static/images/pyramid-loop/loop.gif"
 ---
 
-# Loop
-
 ![](/static/images/pyramid-loop/loop.gif)
 
 A little looping gif I made in Processing for an assignment. My description from [the original post](http://cmuems.com/2018/60212f/chromsan/09/13/chromsan-animatedloop/):

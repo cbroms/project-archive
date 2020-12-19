@@ -1,11 +1,9 @@
 ---
 title: "V4.js"
 date: 2019-07-14
-category: "library"
+category: "Software"
 image: "/static/images/v4js/v4.gif"
 ---
-
-# V4.js
 
 ![](/static/images/v4js/v4.gif)
 

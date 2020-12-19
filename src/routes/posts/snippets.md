@@ -5,8 +5,6 @@ category: "Experiment"
 image: "/static/images/snippets/snip.png"
 ---
 
-# Snippets
-
 ![](/static/images/snippets/snip.png " ")
 
 This project asks users to select what they find to be the meaningful portion of a snippet of text. Users' selections are aggregated to create a mapping between each word and the proportion of people that found it meaningful. The original text is redrawn to reflect this proportion, resulting in a new passage organized in a sort of hierarchy of meaning. As intersubjective agreement increases, letters in words come together, become darker, and grow larger. In areas with less agreement, letters shrink, become lighter, and spread apart.

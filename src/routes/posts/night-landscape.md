@@ -5,8 +5,6 @@ category: "Photography"
 image: "/static/images/night-landscape/NL_1.jpg"
 ---
 
-# Night Landscape
-
 ![](/static/images/night-landscape/NL_1.jpg)
 
 ![](/static/images/night-landscape/NL_2.jpg)

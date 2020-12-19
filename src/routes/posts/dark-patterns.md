@@ -5,8 +5,6 @@ category: "Game"
 image: "/static/images/dark-patterns/intro.png"
 ---
 
-# Dark Patterns
-
 A web-based game that explores the dark side of user experience design. [Play it here](https://darkpatterns.rainflame.com).
 
 ![](/static/images/dark-patterns/intro.png)

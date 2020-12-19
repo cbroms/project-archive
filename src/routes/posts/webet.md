@@ -1,13 +1,13 @@
 ---
 title: "WebET"
-date: 2020-06-01
-now: true
-category: "experiment"
+date: 2020-09-01
+category: "Software"
 image: "/static/images/webet/viz-draft.png"
 ---
 
-# WebET
-
 ![](/static/images/webet/viz-draft.png)
 
-WebET is an experimental way of capturing eye tracking data from a common webcam for remote web-based usability studies. I'm working on this project over the summer as a result of an Undergraduate Research Fellowship from Carnegie Mellon University. Advised by Prof. John Zimmerman. 
+WebET is an experimental way of capturing eye tracking data from a common webcam for remote web-based usability studies. You can find [the full case study on my portfolio](https://christianbroms.com/project/webet). 
+
+
+I developed this project over the summer of 2020. It was advised by Professor John Zimmerman and is the result of an Undergraduate Summer Research Fellowship awarded by Carnegie Mellon University, funded by the Porges Family Fund for Undergraduate Research.

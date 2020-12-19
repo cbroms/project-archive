@@ -5,8 +5,6 @@ category: "Photography"
 image: "/static/images/sleepy-hollow/16.jpg"
 ---
 
-# Sleepy Hollow
-
 ![](/static/images/sleepy-hollow/16.jpg)
 
 ![](/static/images/sleepy-hollow/1.jpg)

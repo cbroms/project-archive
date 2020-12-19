@@ -5,8 +5,6 @@ category: "Website"
 image: "/static/images/flygenius-v1/og1.jpg"
 ---
 
-# Flygenius Version 1
-
 This was a project for [an HCI class at CMU](http://humanaiclass.org) I took in fall 2018. I completed this project in a very short timeframe, just 4 days. This involved:
 
 -   Finding a dataset of flight data for all domestic flights

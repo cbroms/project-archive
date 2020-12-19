@@ -5,8 +5,6 @@ category: "Photography"
 image: "/static/images/panther-hollow/1.jpg"
 ---
 
-# Little People on Panther Hollow Lake
-
 ![](/static/images/panther-hollow/1.jpg)
 
 ![](/static/images/panther-hollow/2.jpg)

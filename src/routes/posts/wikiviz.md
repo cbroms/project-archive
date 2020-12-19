@@ -5,8 +5,6 @@ category: "Website"
 image: "/static/images/wikiviz/wikiviz.gif"
 ---
 
-# WikiViz: Prototyping a Parallel Browsing Experience
-
 ![](/static/images/wikiviz/wikiviz.gif)
 
 Visit the website at [wikiviz.rainflame.com](https://wikiviz.rainflame.com).

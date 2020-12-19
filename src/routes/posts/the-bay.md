@@ -5,8 +5,6 @@ category: "Photography"
 image: "/static/images/the-bay/BP_1.jpg"
 ---
 
-# The Bay
-
 ![](/static/images/the-bay/BP_1.jpg)
 
 ![](/static/images/the-bay/BP_2.jpg)

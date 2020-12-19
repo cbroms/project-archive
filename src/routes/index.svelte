@@ -18,7 +18,7 @@
 </script>
 
 <svelte:head>
-  <title>Archive</title>
+  <title>Christian's Project Archive</title>
 </svelte:head>
 
 <div>

@@ -5,8 +5,6 @@ category: "Experiment"
 image: "/static/images/gaze-visualization/edit-5.gif"
 ---
 
-# Gaze Visualization
-
 ![](/static/images/gaze-visualization/edit-5.gif)
 
 My description from the [original post](http://cmuems.com/2018/60212f/chromsan/10/12/chromsan-body/):

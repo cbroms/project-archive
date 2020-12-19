@@ -17,6 +17,15 @@ def create_all_thumbnails():
 
     # make thumbnails 
     image_list = []
+
+    # existing thumbnails 
+    bad_images = glob.glob(PATH_TO_STATIC_FILES + 'images/**/*-thumb.jpg')
+    bad_images.extend(glob.glob(PATH_TO_STATIC_FILES + 'images/**/*-mid.jpg'))
+
+    for index, filename in enumerate(bad_images):
+        os.remove(filename)
+
+    # the remaining images are the OGs
     images = glob.glob(PATH_TO_STATIC_FILES + 'images/**/*.jpg')
     images.extend(glob.glob(PATH_TO_STATIC_FILES + 'images/**/*.jpeg'))
     images.extend(glob.glob(PATH_TO_STATIC_FILES + 'images/**/*.png'))
@@ -26,20 +35,15 @@ def create_all_thumbnails():
     size_gif = 320, 240
 
     for index, filename in enumerate(images):
-        if "-thumb" in filename or "-mid" in filename:
-            os.remove(filename)
 
-        if "-thumb" not in filename and "-mid" not in filename:
-            # make sure the thumbnails haven't already been generated 
-          #  if (index < len(images) - 1 and "-thumb" not in images[index + 1] and "-mid" not in images[index + 1]) or (index == len(images) - 1):
-            im=Image.open(filename)
-            im.thumbnail(size_mid)
-            print("Saved Thumbnail Mid: " + filename.split('.')[0] + "-mid.jpg")
-            im.convert('RGB').save(filename.split('.')[0] + "-mid.jpg", "JPEG", quality=75, optimize=True, progressive=True)
-            im=Image.open(filename)
-            im.thumbnail(size_small)
-            print("Saved Thumbnail Small: " + filename.split('.')[0] + "-thumb.jpg")
-            im.convert('RGB').save(filename.split('.')[0] + "-thumb.jpg", "JPEG", quality=90, optimize=True, progressive=True)
+        im=Image.open(filename)
+        im.thumbnail(size_mid)
+        print("Saved Thumbnail Mid: " + filename.split('.')[0] + "-mid.jpg")
+        im.convert('RGB').save(filename.split('.')[0] + "-mid.jpg", "JPEG", quality=75, optimize=True, progressive=True)
+        im=Image.open(filename)
+        im.thumbnail(size_small)
+        print("Saved Thumbnail Small: " + filename.split('.')[0] + "-thumb.jpg")
+        im.convert('RGB').save(filename.split('.')[0] + "-thumb.jpg", "JPEG", quality=90, optimize=True, progressive=True)
             
 
 

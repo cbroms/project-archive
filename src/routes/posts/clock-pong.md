@@ -5,8 +5,6 @@ category: "Game"
 image: "/static/images/clock-pong/edit-3.gif"
 ---
 
-# Clock Pong Game
-
 A small game I made using p5.js for an assignment in 60-212 Interactivity and Computation and CMU. My description from [the original post](http://cmuems.com/2018/60212f/chromsan/09/20/chromsan-clock/):
 
 Prevent time from passing by knocking away the incoming seconds. The more you prevent time from passing, the faster the seconds will come. If one of the seconds makes it past you, time is reset and can even go into the future.

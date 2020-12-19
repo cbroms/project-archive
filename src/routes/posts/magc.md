@@ -5,8 +5,6 @@ category: "Website"
 image: "/static/images/magc/magcmap.png"
 ---
 
-# Marin Art and Garden Center Interactive Map
-
 This is a project I began in the summer of 2018 for the non-profit [Marin Art and Garden Center](https://magc.org) (MAGC) in Ross, California. MAGC is an eleven acre site containing historic gardens and buildings, as well as gallery and retail spaces. The organization hosts a variety of programs in the arts, gardens, and conservation.
 
 I was tasked with designing and implementing a digital version of a map of the grounds that would contain information about historical features on the site. MAGC found many visitors to be unaware of the history behind many of the gardens and buildings, which before could only be learned from a guided tour. MAGC wished to make this information available to a larger audience both online and onsite.

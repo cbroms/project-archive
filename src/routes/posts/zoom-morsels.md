@@ -1,10 +1,10 @@
 ---
 title: "Zoom Morsels"
 date: 2020-04-30
-category: "experiment"
+category: "Experiment"
 image: "/static/images/zoom-morsels/FaceTracking.jpg"
 ---
-# Zoom Morsels: a series of small interactions using facetracking to control your presence on Zoom.
+## A series of small interactions using facetracking to control your presence on Zoom.
 
 Description from [the original post](https://courses.ideate.cmu.edu/60-461/s2020/cbromsandrew-cmu-edu/04/30/christian-final/):
 

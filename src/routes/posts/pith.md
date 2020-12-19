@@ -1,8 +1,7 @@
 ---
 title: "Pith"
 date: 2020-05-19
-now: true
-category: "website"
+category: "Website"
 image: "/static/images/pith/transclusion.gif"
 ---
 

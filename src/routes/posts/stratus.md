@@ -5,8 +5,6 @@ category: "App"
 image: "/static/images/stratus/stratus.png"
 ---
 
-# Stratus
-
 One of the major challenges faced when trying to analyze a realtime and continuous stream of data is how to structure and visualize it in a way that results in near-instantaneous understanding. There are methods of data visualization that can display particular aspects of a dataset, such as a chart or graph. The problem is that they are limited in terms of _what kind of data can be visualized_, as well as _the speed someone is able to understand_ the data being represented.
 
 One particular domain of data that has this problem is weather data. There's a _huge amount_ of data being generated, and understanding it _quickly_ is often of the utmost importance, especially for pilots.

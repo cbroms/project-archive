@@ -1,11 +1,9 @@
 ---
 title: "Random Emote Generator"
 date: 2020-05-21
-category: "website"
+category: "Website"
 image: "/static/images/emotes/emotes.gif"
 ---
-
-# Random Emotes
 
 ![](/static/images/emotes/emotes.gif)
 

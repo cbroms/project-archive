@@ -1,13 +1,11 @@
 ---
 title: "Pith Blog and Rainflame Landing"
 date: 2020-05-18
-category: "website"
+category: "Website"
 image: "/static/images/pith-blog/rainflame.gif"
 ---
 
-# Pith Blog
-
-To track the progress of [Pith](/project/pith), we're posting weekly updates on a blog. In order to do this, we needed a nice simple blog, not some ridiculous overkill Medium page. I built a small static site that takes markdown pages and renders individual post pages and an index page. Probably the fanciest part is the light/dark mode button. It can be found at [why.pith.is](https://why.pith.is), and the code can be [found on GitHub](https://github.com/rainflame/pith-blog).
+To track the progress of [Pith](/project/pith), we're posting weekly updates on a blog. In order to do this, we needed a nice simple blog, not some huge Medium page. I built a small static site that takes markdown pages and renders individual post pages and an index page. Probably the fanciest part is the light/dark mode button. It can be found at [why.pith.is](https://why.pith.is), and the code can be [found on GitHub](https://github.com/rainflame/pith-blog).
 
 ![](/static/images/pith-blog/light.png)
 

@@ -5,8 +5,6 @@ category: "Experiment"
 image: "/static/images/summarize-this/times1.png"
 ---
 
-# Summarize This
-
 Summarize This is an experimental website that takes a url and produces a summary of the page in a series of short sentences. It is not meant to be accurate, but rather to produce entertaining outputs that may or may not be a good reflection of the site's content.
 
 It works by extracting a random selection of a webpage's text and collecting the organizations, people, topics, and parts of speech. It analyses the sentiment of the webpage and then creates new sentences from the entities that have been extracted that are similar in sentiment to the overall page. It does not add any new content to the output; all words are harvested from the original website and reused to make the summary.

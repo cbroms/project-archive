@@ -5,8 +5,6 @@ category: "Experiment"
 image: "/static/images/encyc-of-phil/excerpt.png"
 ---
 
-# The Extended Encyclopedia of Philosophy
-
 A collection of twelve new -isms. A sample chapter can be viewed [here](http://cmuems.com/2018/60212f/wp-content/uploads/2018/11/0-chromsan.pdf).
 
 ![](/static/images/encyc-of-phil/excerpt.png)

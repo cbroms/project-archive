@@ -5,8 +5,6 @@ category: "Website"
 image: "/static/images/flygenius-v2/fg1.png"
 ---
 
-# Flygenius Version 2
-
 This is the second iteration of Flygenius. The first version was a project for [an HCI class at CMU](http://humanaiclass.org) I took in fall 2018. More information about the original project can be [found here](https://archive.christianbroms.com/project/flygenius-v1).
 
 This project had three main parts: a redesign of the machine learning model making the flight time predictions, a redesign of the website interface and information architecture, and the development of the new site.
