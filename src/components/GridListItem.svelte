@@ -10,7 +10,7 @@
 </script>
 
 
-<a class="item {`${view}`}" class:loading="{!loaded && view === "grid"}" href="{post.slug}">
+<a class="item {`${view}`}" class:loading="{!loaded && view === "grid"}" href="project/{post.slug}">
 	{#if view === "grid"}
 		<img src="{post.smallImage}" alt={post.slug} on:load="{onLoad}" />
 	{:else}

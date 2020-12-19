@@ -4,7 +4,7 @@
 
 <nav>
   ~ <a href='/'>archive</a>
-  {#if segment !== undefined}
+ <!--  {#if segment !== undefined}
   	/ <a href='/{segment}'>{segment}</a>
-  {/if}
+  {/if} -->
 </nav>
