@@ -2,7 +2,7 @@
 title: "Phantomime"
 date: 2020-12-15
 category: "Game"
-image: "/static/images/phantomime/ghost.png"
+image: "/static/images/phantomime/loading.gif"
 ---
 
 ![](/static/images/phantomime/interaction.gif)

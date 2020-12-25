@@ -2,7 +2,7 @@
 title: "WebET"
 date: 2020-09-01
 category: "Software"
-image: "/static/images/webet/viz-draft.png"
+image: "/static/images/webet/et-heatmap.png"
 ---
 
 ![](/static/images/webet/viz-draft.png)

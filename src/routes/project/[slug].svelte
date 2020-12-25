@@ -14,6 +14,7 @@
 </script>
 
 <script>
+  import Header from "../../components/Header.svelte"
   export let post
 </script>
 
@@ -32,6 +33,8 @@
 <!--  Link to your preferred image  -->
 <!-- 	<meta property="og:image" content="" /> -->
 </svelte:head>
+
+<Header path={post.slug}/>
 
 <header>
   <p>{post.printDate}</p>

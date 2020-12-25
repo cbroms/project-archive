@@ -1,10 +1,10 @@
 <script>
-  export let segment;
+  	export let path;
 </script>
 
 <nav>
   ~ <a href='/'>archive</a>
- <!--  {#if segment !== undefined}
-  	/ <a href='/{segment}'>{segment}</a>
-  {/if} -->
+  {#if path !== undefined}
+  	/ <a href='/project/{path}'>{path}</a>
+  {/if}
 </nav>

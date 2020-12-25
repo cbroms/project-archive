@@ -1,11 +1,11 @@
 <script>
   import Nav from './Nav.svelte'
 
-  export let segment
+  export let path = "";
 </script>
 
 <header>
-  <Nav {segment} />
+  <Nav {path}/>
   <hr>
 </header>
 

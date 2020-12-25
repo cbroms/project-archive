@@ -10,7 +10,7 @@
 </script>
 
 
-<a class="item {`${view}`}" class:loading="{!loaded && view === "grid"}" href="project/{post.slug}">
+<a class="item {`${view}`}" class:loading={!loaded && view === "grid"} href="project/{post.slug}" title={post.title}>
 	{#if view === "grid"}
 		<img src="{post.smallImage}" alt={post.slug} on:load="{onLoad}" />
 	{:else}
@@ -62,8 +62,9 @@
 	}
 
 	.grid {
-		padding: 10px;
+		padding: 0;
 		margin: 0;
+		margin-top: 10px;
 		background-color: white;
 	}
 
@@ -82,6 +83,7 @@
 
 	.post-line {
 		display: flex;
+		justify-content: space-between;
 		width: 100%;
 	}
 
@@ -96,6 +98,18 @@
 
 	.post-type {
 		width: 100px;
+	}
+
+	@media (max-width: 400px) {
+		.post-title {
+			width: 100px;
+		}
+		.post-date {
+			width: 75px;
+		}
+		.post-type {
+			width: 75px;
+		}
 	}
 
 </style>

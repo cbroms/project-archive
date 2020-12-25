@@ -2,7 +2,7 @@
 title: "Dark Network"
 date: 2020-10-30
 category: "Game"
-image: "/static/images/dark-network/cover.png"
+image: "/static/images/dark-network/network.gif"
 ---
 
 ![](/static/images/dark-network/network.gif)

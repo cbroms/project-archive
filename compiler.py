@@ -30,7 +30,7 @@ def create_all_thumbnails():
     images.extend(glob.glob(PATH_TO_STATIC_FILES + 'images/**/*.jpeg'))
     images.extend(glob.glob(PATH_TO_STATIC_FILES + 'images/**/*.png'))
 
-    size_small = 128, 128
+    size_small = 175, 175
     size_mid =  400, 400
     size_gif = 320, 240
 
