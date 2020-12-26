@@ -83,6 +83,7 @@
 
 	.post-line {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-between;
 		width: 100%;
 	}
@@ -101,14 +102,27 @@
 	}
 
 	@media (max-width: 400px) {
+
+		a {
+			text-decoration: none;
+		}
+
+		.post-line {
+			border-left: 2px solid grey;
+			padding-left: 20px;
+		}
+
 		.post-title {
-			width: 100px;
+			font-weight: bold;
+			flex-grow: 2;
+			margin-bottom: 20px;
 		}
 		.post-date {
-			width: 75px;
+			width: 125px;
 		}
 		.post-type {
-			width: 75px;
+			width: 100px;
+			text-align: right;
 		}
 	}
 
