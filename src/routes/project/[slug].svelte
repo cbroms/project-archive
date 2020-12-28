@@ -14,43 +14,40 @@
 </script>
 
 <script>
-  import Header from "../../components/Header.svelte"
-  export let post
+  import HeaderComponent from "../../components/Header.svelte";
+  export let post;
 </script>
 
 <svelte:head>
-  <title>{post.title}</title>
-<!--  Include canonical links to your blog -->
-<!--   <link rel="canonical" href="" /> -->
-  
-<!-- Update content properties with your URL   -->
-<!-- 	<meta property="og:url" content=""} /> -->
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content={post.title} />
-	<meta name="Description" content={post.excerpt} />
-	<meta property="og:description" content={post.excerpt} />
-  
-<!--  Link to your preferred image  -->
-<!-- 	<meta property="og:image" content="" /> -->
+  <title>{post.title} / Christian's Project Archive</title>
+  <link rel="canonical"
+  href={`https://archive.christianbroms.com/project/${post.slug}`} /> <meta
+  property="og:url"
+  content={`https://archive.christianbroms.com/project/${post.slug}`} />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="{post.title || post.title}" />
+  <meta name="Description" content="{post.excerpt || post.title}" />
+  <meta property="og:description" content="{post.excerpt}" />
+  <meta property="og:image" content="{post.image}" />
 </svelte:head>
 
-<Header path={post.slug}/>
+<HeaderComponent path="{post.slug}" />
 
 <header>
   <p>{post.printDate}</p>
-  <h1>{post.title}</h1>
+  <h1 class="title">{post.title}</h1>
   <hr />
 </header>
 
 <div class="container">
-    <article class="content">
-      {@html post.html}
-    </article>
+  <article class="content">{@html post.html}</article>
 </div>
-
 
 <style>
   .container {
     max-width: 640px;
+  }
+  .title {
+    font-size: 3.5rem;
   }
 </style>

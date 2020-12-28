@@ -31,7 +31,6 @@
 		padding: 10px 0;
 		width: 175px;
 		height: 175px;
-		background-color: white;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -65,7 +64,6 @@
 		padding: 0;
 		margin: 0;
 		margin-top: 10px;
-		background-color: white;
 	}
 
 	.list {
@@ -79,6 +77,7 @@
 		min-width: 0;
 		max-width: 100%;
 		max-height: 100%;
+		width: auto;
 	}
 
 	.post-line {
@@ -101,7 +100,7 @@
 		width: 100px;
 	}
 
-	@media (max-width: 400px) {
+	@media (max-width: 500px) {
 
 		a {
 			text-decoration: none;
