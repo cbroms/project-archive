@@ -3,6 +3,7 @@ title: "Summarize This"
 date: 2019-10-07
 category: "Experiment"
 image: "/static/images/summarize-this/times1.png"
+excerpt: A website that scrapes other websites and outputs entertaining sentences using their content.
 ---
 
 Summarize This is an experimental website that takes a url and produces a summary of the page in a series of short sentences. It is not meant to be accurate, but rather to produce entertaining outputs that may or may not be a good reflection of the site's content.

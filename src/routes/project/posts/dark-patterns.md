@@ -3,9 +3,12 @@ title: "Dark Patterns"
 date: 2019-12-11
 category: "Game"
 image: "/static/images/dark-patterns/intro.png"
+excerpt: A web-based game that explores the dark side of user experience design.
 ---
 
-A web-based game that explores the dark side of user experience design. [Play it here](https://darkpatterns.rainflame.com).
+This was a game I made to try implementing some [dark patterns](https://en.wikipedia.org/wiki/Dark_pattern) in an environment where the purpose is to pit the user _against_ the system.
+
+[Play it here](https://darkpatterns.rainflame.com).
 
 ![](/static/images/dark-patterns/intro.png)
 

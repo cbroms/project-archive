@@ -3,6 +3,7 @@ title: "Night Landscape"
 date: 2016-03-07
 category: "Photography"
 image: "/static/images/night-landscape/NL_1.jpg"
+excerpt: Photographic experimentations combining landscape photography with light painting.
 ---
 
 ![](/static/images/night-landscape/NL_1.jpg)

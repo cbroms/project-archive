@@ -3,9 +3,12 @@ title: "FB Design Website"
 date: 2019-01-10
 category: "Website"
 image: "/static/images/fb-design/main.png"
+excerpt: A portfolio website I designed and built for the architecture firm FB Design.
 ---
 
 This is a website I built for my parents' architecture firm FB Design. They needed a site to showcase their work with a few basic features, like the ability to filter projects. I designed a simple website that has just three page types, plus an about page.
+
+[Visit it here](https://fairchildbroms.design).
 
 ### Landing Page
 

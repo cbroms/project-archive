@@ -3,6 +3,7 @@ title: "GazeOSC"
 date: 2020-03-01
 category: "Software"
 image: "/static/images/gaze-osc/demo.gif"
+excerpt: A program that enables the data stream from an eye tracker to be acessed from any computer on the local network using the OSC protocol.
 ---
 
 ![](/static/images/gaze-osc/demo.gif)

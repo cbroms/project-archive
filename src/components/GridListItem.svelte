@@ -3,6 +3,8 @@
 	export let post;
 
 	let loaded = false;
+	let timeout = null;
+	let hovered = false;
 
 	const onLoad = () => {
 		loaded = true;
@@ -10,11 +12,11 @@
 </script>
 
 
-<a class="item {`${view}`}" class:loading={!loaded && view === "grid"} href="project/{post.slug}" title={post.title}>
+<a class="item {`${view}`}" class:loading={!loaded && view === "grid"} href="project/{post.slug}">
 	{#if view === "grid"}
 		<img src="{post.smallImage}" alt={post.slug} on:load="{onLoad}" />
 	{:else}
-	<div class="post-line">
+	<div class="post-line" on:mouseover={() => hovered = true} on:mouseleave={() =>  hovered = false}>
 		<div class="post-title">{post.title}</div>
 		<div class="post-date">{post.printDate}</div>
 		<div class="post-type">{post.category}</div>
@@ -22,17 +24,26 @@
 	{/if}
 </a>	
 
+{#if view === "list"}
+	<div class="post-description">
+		{#if hovered && post.excerpt}
+			<div>
+				<p class="post-title">{post.excerpt}</p>
+			</div>
+		{/if}
+	</div>
+{/if}
+
 
 
 <style>
 
 	.item {
 		display: inline-block;
-		padding: 10px 0;
 		width: 175px;
 		height: 175px;
 		display: flex;
-		justify-content: center;
+		justify-content: left;
 		align-items: center;
 	}
 
@@ -64,11 +75,11 @@
 		padding: 0;
 		margin: 0;
 		margin-top: 10px;
+		margin-right: 20px;
 	}
 
 	.list {
-		padding: 20px 0;
-		width: 100%;
+		width: 640px;
 		height: auto;
 		flex-grow: 1;
 	}
@@ -80,11 +91,20 @@
 		width: auto;
 	}
 
+	.post-description {
+		padding-top: 5px;
+		padding-left: 20px;
+		max-height: 40px;
+		display: block;
+		width: 280px;
+	}
+
 	.post-line {
+		padding: 20px 0;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		width: 100%;
+		width: 640px;
 	}
 
 	.post-title {
@@ -93,22 +113,31 @@
 	}
 
 	.post-date {
-		width: 200px;
+		width: 175px;
 	}
 
 	.post-type {
 		width: 100px;
 	}
 
-	@media (max-width: 500px) {
+	@media (max-width: 1100px) {
 
 		a {
 			text-decoration: none;
 		}
 
+		.post-description {
+			display: none;
+		}
+
+		.list {
+			width: 100%;
+		}
+
 		.post-line {
 			border-left: 2px solid grey;
 			padding-left: 20px;
+			margin: 10px 0;
 		}
 
 		.post-title {

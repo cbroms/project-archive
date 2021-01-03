@@ -3,6 +3,7 @@ title: "Snippets"
 date: 2019-04-15
 category: "Experiment"
 image: "/static/images/snippets/snip.png"
+excerpt: A quick experimental website designed to reveal the parts of text people find to be most meaningful.
 ---
 
 ![](/static/images/snippets/snip.png " ")
@@ -11,7 +12,7 @@ This project asks users to select what they find to be the meaningful portion of
 
 The project is a bit of an experiment for a few possible future projects. At the core, I'm interested in the way that people construct meaning from text, and how much of this construction is subjective. From the results of this poll, I seek to find possible ways of addressing this question that builds on the successes and failures of this method.
 
-## Design
+# Design
 
 When I first envisioned the project, I wanted to create a way for users to read over a passage of text and select the portions they found to be meaningful. However, it became clear that this would result in either _too many_ selections (users selecting both meaningful portion and contextual elements) or _too few_ selections (users selecting the most meaningful few words out of the entire passage).
 
@@ -31,7 +32,7 @@ Finally, the primary action: highlighting. The most intuitive way of selection a
 
 ![](/static/images/snippets/snip3.png " ")
 
-## Development
+# Development
 
 I built the site with the MERN stack. It was my first time working with both MongoDB and Express, but found both very intuitive to work with and easy enough to learn. Since the goal was to get something up and running quickly, I kept the site as simple as possible; there are no extraneous animations or menus.
 

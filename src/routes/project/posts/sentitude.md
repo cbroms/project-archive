@@ -3,6 +3,7 @@ title: "Sentitude: Sentiment Analysis"
 date: 2018-07-01
 category: "Experiment"
 image: "/static/images/sentitude/select_p.gif"
+excerpt: A browser extension I built as a way of teaching myself techniques for sentiment analysis.
 ---
 
 ![](/static/images/sentitude/select_p.gif)

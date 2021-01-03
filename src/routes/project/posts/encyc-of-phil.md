@@ -3,6 +3,7 @@ title: "Extended Encyclopedia of Philosophy"
 date: 2018-11-16
 category: "Experiment"
 image: "/static/images/encyc-of-phil/excerpt.png"
+excerpt: A generated book that uses information from Wikipedia pages to create new philosophical "-isms".
 ---
 
 A collection of twelve new -isms. A sample chapter can be viewed [here](http://cmuems.com/2018/60212f/wp-content/uploads/2018/11/0-chromsan.pdf).

@@ -3,6 +3,7 @@ title: "V4.js"
 date: 2019-07-14
 category: "Software"
 image: "/static/images/v4js/v4.gif"
+excerpt: An animation library written in typescript that provides an easy interface between the HTML canvas element and GLSL shader programs.
 ---
 
 ![](/static/images/v4js/v4.gif)

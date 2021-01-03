@@ -10,6 +10,8 @@ body {
 img {
   max-width: 640px;
   width: 100%;
+  border: 1px solid black;
+  margin: 1rem 0;
 }
 
 p,
@@ -41,5 +43,5 @@ hr {
   max-width: 640px;
   margin: 0;
   outline: none;
-  border: 1px solid black;
+  border-bottom: 2px solid black;
 }

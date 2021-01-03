@@ -3,6 +3,7 @@ title: "Gaze Narratives"
 date: 2020-02-27
 category: "Experiment"
 image: "/static/images/gaze-narratives/debug.gif"
+excerpt: An experiment using an eye tracker to reveal the sorts of narratives that emerge from people's gaze across images.
 ---
 
 A series of narratives that emerge based on peoples gaze across an image. Find the [full description here](https://courses.ideate.cmu.edu/60-461/s2020/cbromsandrew-cmu-edu/02/27/typology-of-fixation-narratives/).

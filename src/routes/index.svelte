@@ -3,6 +3,7 @@
     return this.fetch(`index.json`)
       .then((r) => r.json())
       .then((posts) => {
+        const featured = posts.filter((post) => post.featured);
         const nextYearBreakLookup = {};
 
         posts.map((post, index) => {
@@ -15,7 +16,7 @@
             }
           }
         });
-        return { posts, nextYearBreakLookup };
+        return { posts, nextYearBreakLookup, featured };
       });
   }
 </script>
@@ -28,6 +29,7 @@
 
   export let posts;
   export let nextYearBreakLookup;
+  export let featured;
 
   let view = "list";
 
@@ -50,7 +52,15 @@
     assorted articles of interest.
   </p>
   <ViewPicker {view} {changeView} />
-  <hr />
+
+  <h2 class="project-section-header">Featured projects</h2>
+  <div class="content">
+    {#each featured as post}
+    <GridListItem {post} {view} />
+    {/each}
+  </div>
+
+  <h2 class="project-section-header">All projects</h2>
   <div class="content">
     {#each posts as post, i}
     <GridListItem {post} {view} />
@@ -64,11 +74,16 @@
   hr {
     margin: 20px 0;
   }
+
+  .project-section-header {
+    margin-top: 50px;
+  }
   .content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 640px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 940px;
   }
 
   .title {

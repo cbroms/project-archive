@@ -36,6 +36,8 @@
 <header>
   <p>{post.printDate}</p>
   <h1 class="title">{post.title}</h1>
+  <!-- <p><strong>{post.excerpt ? "Summary" : ""}</strong></p> -->
+  <p class="excerpt"><em>{post.excerpt || ""}</em></p>
   <hr />
 </header>
 
@@ -45,9 +47,13 @@
 
 <style>
   .container {
+    padding-top: 30px;
     max-width: 640px;
   }
   .title {
     font-size: 3.5rem;
+  }
+  .excerpt {
+    padding-bottom: 10px;
   }
 </style>

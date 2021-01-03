@@ -3,6 +3,7 @@ title: "Flygenius Version 1"
 date: 2018-12-13
 category: "Website"
 image: "/static/images/flygenius-v1/og1.jpg"
+excerpt: A four day project to build a machine learning model to predict domestic flight times and website interface to use it.
 ---
 
 This was a project for [an HCI class at CMU](http://humanaiclass.org) I took in fall 2018. I completed this project in a very short timeframe, just 4 days. This involved:

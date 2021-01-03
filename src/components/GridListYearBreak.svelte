@@ -24,7 +24,7 @@
 		padding: 0;
 		margin: 0;
 		margin-top: 10px;
-
+		margin-right: 10px;
 		border-right: 2px solid black;
 	}
 
@@ -37,9 +37,8 @@
 
 	.list {
 		padding: 20px 0;
-		width: 100%;
+		width: 640px;
 		height: auto;
-		flex-grow: 1;
 
 		border-bottom: 2px solid black;
 	}

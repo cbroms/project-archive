@@ -3,6 +3,7 @@ title: "Whispers: a Telematic Environment"
 date: 2018-09-27
 category: "Website"
 image: "/static/images/whispers/edit-4.gif"
+excerpt: The game of telephone, online.
 ---
 
 My description of the project from [the original post](http://cmuems.com/2018/60212f/chromsan/09/27/chromsan-telematic/):

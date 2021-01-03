@@ -3,13 +3,13 @@ title: "WebET"
 date: 2020-09-01
 category: "Software"
 image: "/static/images/webet/et-heatmap.png"
+excerpt: "Over the course of two months I developed an end-to-end system for facilitating  website usability testing using a novel approach to eye tracking for the web."
+featured: true
 ---
 
-## The problem: inferring intention
+# The problem: inferring intention
 
 How can we gain deeper insight into how people use the websites we design? There's usually two ways, generally divided in the kind of data they produce: _quantitative_ (web analytics, A/B testing) and _qualitative_ (user interviews, observation, feedback). While analytics are fast and cheap to deploy, they don't offer the same descriptive power as talking to users. While talking to users provides insight into their mental models, it's slow and expensive. **There's a great opportunity to develop a research method that has the best qualities of both quantitative and qualitative methods: cheap, fast, descriptive, and actionable.**
-
-<!-- more -->
 
 ![ ](/static/images/webet/methods-comparison.png "An informal comparison of analytics and interviews. Individual instances of each method will vary in each of the four categories, but generally there's a price+time/explanatory power trade-off.")
 
@@ -25,7 +25,7 @@ However, the method has a number of drawbacks:
 
 In the ideal case, we would remove the physical eye tracker from the equation entirely by simply using a webcam and eye tracking software, therefore reducing the expensive and physical qualities. This is a technical problem I planned to solve by using existing software. However, the question that still remained was how to simplify the process, which first meant understanding how eye tracking fits into the usability evaluation process in the first place.
 
-## Exploring how eye tracking has been used for UX research
+# Exploring how eye tracking has been used for UX research
 
 Before designing the system, I began by reseraching how eye tracking has been used for evaluating interfaces. There are very few case studies that utilize eye tracking methodology, and those that do exist involve evaluating already highly polished interfaces.
 
@@ -33,7 +33,7 @@ Before designing the system, I began by reseraching how eye tracking has been us
 
 A number of other resources suggested that eye tracking should only be included in usability evaluation towards the end of development, and only if absolutely necessary. Eye tracking's weaknesses were often suggested as strongly detracting from any benefit that the method might bring, especially to highly iterative and fast-paced design work.
 
-### How do researchers visualize eye tracking information?
+## How do researchers visualize eye tracking information?
 
 Perhaps the most insightful part of case studies were the visualizations; they suggested how the abstract eye tracking data can be made understandable for design work. For each case study I went through, I collected any included visualizations and classified them. They fell into three main categories:
 
@@ -45,7 +45,7 @@ Perhaps the most insightful part of case studies were the visualizations; they s
 
 The AOI visualization method stood out as particularly interesting to me as it uses the actual interface as a framework for displaying metrics, as opposed to the others which can be applied over any arbitrary content. **AOIs also suggested a way to bootstrap the problem of creating a webcam-based eye tracker: use an image classifier to determine which _region_ someone was fixating on, rather than which _pixel_.**
 
-## Creating research flows with AOIs
+# Creating research flows with AOIs
 
 In the same way that a designer might create a user flow diagram to show the typical way a user might use a website or app, I created _research_ flow scenarios to see where AOI-based eye tracking could fit in to bolster an existing research process. Given information from web analytics about a page, how could AOI-based eye tracking be used answer a research question?
 
@@ -67,7 +67,7 @@ This provides yet another insight: the content of the element is compelling enou
 
 The next step was to take these flows and create a system that would allow for a researcher or designer to quickly answer a usability question about an interface using eye tracking.
 
-## Designing a simple system
+# Designing a simple system
 
 Given the research flow outlined above, the next task was to create the basic parts of a system that would facilitate it. **Since I was working on a short timeframe, I would have to quickly design and develop a basic working prototype of the system in four weeks.**
 
@@ -78,11 +78,11 @@ It was clear that the system could be broken up into two distinct sub-systems:
 
 I had two websites to design, each meant to be used by different stakeholder groups. For the sake of keeping the project on track, I allocated one week to design and build each website, one extra week to build the backend infrastructure to support tying together both, and one week to build the eye tracking software itself.
 
-### The eye tracking software, briefly
+## The eye tracking software, briefly
 
 I don't have a lot of machine learning expertise, but I have been able to hack together [some ML projects](https://archive.christianbroms.com/project/flygenius-v2/) in the past. I built the eye tracker as a simple image classifier with tensorflow. There's a training phase where the AOIs defined by researchers are used to create a path for a fixation point, which users look at and images of their eyes are captured. These images are fed into the image classifier with the corresponding AOI labels, which trains on this data. The model is then used to infer AOIs using unlabeled images captured during the study. I was able to get this method to 86-94% accuracy, depending on the specific test conditions.
 
-### The participant website
+## The participant website
 
 The website I designed for the participants was primarily built around the constraints imposed by the eye tracking software. There had to be a calibration phase and a study phase, and the remainder was a matter of guiding the participant through the process. In particular, the study would require the use of their webcam, so before requesting access (which results in a browser pop-up) it would be important to make clear the nature of the study and _why_ we needed to use their camera.
 
@@ -94,7 +94,7 @@ The entire website was broken down into just four steps:
 4. Instructions for study and start study
 5. Confirm completion
 
-### The researcher website
+## The researcher website
 
 I introduced two main ideas to frame a user's mental model of the system:
 

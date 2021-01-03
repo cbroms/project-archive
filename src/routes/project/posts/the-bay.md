@@ -3,6 +3,7 @@ title: "The Bay: a Pinhole Series"
 date: 2017-03-24
 category: "Photography"
 image: "/static/images/the-bay/BP_1.jpg"
+excerpt: Exploring the technique of pinhole photography and the ancient camera obscura.
 ---
 
 ![](/static/images/the-bay/BP_1.jpg)

@@ -3,6 +3,7 @@ title: "Your/My Room"
 date: 2017-11-29
 category: "Installation"
 image: "/static/images/your-room/web_8.jpg"
+excerpt: The first real website I designed, the interactive portion of an installation.
 ---
 
 ![](/static/images/your-room/web_8.jpg)

@@ -3,13 +3,13 @@ title: "Stratus: AR Weather Visualization"
 date: 2019-08-15
 category: "App"
 image: "/static/images/stratus/stratus.png"
+featured: true
+excerpt: An augmented reality app that visualizes the latest METAR weather report from any airport in the United States.
 ---
 
 # The Problem
 
 **One of the major challenges faced when trying to analyze a realtime and continuous stream of data is how to structure and visualize it in a way that results in near-instantaneous understanding.** There are methods of data visualization that can display particular aspects of a dataset, such as a chart or graph. The problem is that they are limited in terms of _what kind of data can be visualized_, as well as _the speed someone is able to understand_ the data being represented.
-
-<!-- more -->
 
 One particular domain of data that has this problem is weather data. There's a huge amount of data being generated, and understanding it quickly is often of the utmost importance, especially for pilots.
 

@@ -3,6 +3,7 @@ title: "Flygenius Version 2"
 date: 2019-04-21
 category: "Website"
 image: "/static/images/flygenius-v2/fg1.png"
+excerpt: The development of a machine learning model to predict domestic flight times and the design and implementation of the accompanying website.
 ---
 
 This is the second iteration of Flygenius. The first version was a project for [an HCI class at CMU](http://humanaiclass.org) I took in fall 2018. More information about the original project can be [found here](https://archive.christianbroms.com/project/flygenius-v1).

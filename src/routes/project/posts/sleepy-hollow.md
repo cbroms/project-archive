@@ -3,6 +3,7 @@ title: "Sleepy Hollow Walk"
 date: 2016-10-28
 category: "Photography"
 image: "/static/images/sleepy-hollow/16.jpg"
+excerpt: A series of photographs documenting the suburbs where I grew up.
 ---
 
 ![](/static/images/sleepy-hollow/16.jpg)
