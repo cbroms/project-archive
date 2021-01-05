@@ -17,9 +17,9 @@
 		<img src="{post.smallImage}" alt={post.slug} on:load="{onLoad}" />
 	{:else}
 	<div class="post-line" on:mouseover={() => hovered = true} on:mouseleave={() =>  hovered = false}>
-		<div class="post-title">{post.title}</div>
-		<div class="post-date">{post.printDate}</div>
+		<div class="post-date">{post.shortDate}</div>
 		<div class="post-type">{post.category}</div>
+		<div class="post-title">{post.title}</div>
 	</div>
 	{/if}
 </a>	
@@ -28,7 +28,7 @@
 	<div class="post-description">
 		{#if hovered && post.excerpt}
 			<div>
-				<p class="post-title">{post.excerpt}</p>
+				<p class="post-excerpt">{post.excerpt}</p>
 			</div>
 		{/if}
 	</div>
@@ -37,6 +37,14 @@
 
 
 <style>
+
+	a {
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
 
 	.item {
 		display: inline-block;
@@ -109,22 +117,25 @@
 
 	.post-title {
 		width: 100%;
+		font-weight: bold;
+		max-width: 340px;
+	}
+
+	.post-excerpt {
+		width: 100%;
 		max-width: 340px;
 	}
 
 	.post-date {
-		width: 175px;
+		width: 100px;
 	}
 
 	.post-type {
 		width: 100px;
+
 	}
 
 	@media (max-width: 1100px) {
-
-		a {
-			text-decoration: none;
-		}
 
 		.post-description {
 			display: none;
@@ -135,23 +146,33 @@
 		}
 
 		.post-line {
+			justify-content: left;
 			border-left: 2px solid grey;
 			padding-left: 20px;
 			margin: 10px 0;
 		}
 
 		.post-title {
+			font-size: 120%;
 			font-weight: bold;
 			flex-grow: 2;
-			margin-bottom: 20px;
+			margin-top: 20px;
 		}
 		.post-date {
-			width: 125px;
+			width: 100px;
 		}
 		.post-type {
 			width: 100px;
-			text-align: right;
 		}
 	}
+
+		@media (min-width: 642px) and  (max-width: 1100px) {
+			.post-title {
+				margin-top: 0;
+			}
+			.post-line {
+				justify-content: space-between;
+			}
+		}
 
 </style>

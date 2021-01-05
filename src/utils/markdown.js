@@ -54,6 +54,7 @@ export default () => ({
 
     const html = marked(content);
     const printDate = formatDate(new Date(date), "MMM D, YYYY");
+    const shortDate = formatDate(new Date(date), "MMM YYYY");
 
     const exportFromModule = JSON.stringify({
       title: title || slug,
@@ -64,6 +65,7 @@ export default () => ({
       image,
       category,
       printDate,
+      shortDate,
       featured,
     });
 

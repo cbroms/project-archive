@@ -7,12 +7,12 @@
 </script>
 
 <div class="view-buttons">
-	<div class="list" class:active={view === "list"} on:click="{() => changeView("list")}">
+	<div class="list" class:active={view === "list"} on:click="{() => changeView("list")}" title="List view">
 		<span></span>
 		<span></span>
 		<span></span>
 	</div>
-	<div class="grid" class:active={view === "grid"} on:click="{() => changeView("grid")}">
+	<div class="grid" class:active={view === "grid"} on:click="{() => changeView("grid")}" title="Grid view">
 		<span></span>
 		<span></span>
 		<span></span>

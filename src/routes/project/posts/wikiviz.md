@@ -9,13 +9,15 @@ excerpt: A quick interactive prototype of an old and still unrealized way to tra
 
 # Xandau and the potential richness of parallel browsing
 
-Perhaps the single most rich and inspiring instance of an idea for a digital tool I've come across is [Project Xanadu](https://xanadu.com/). Ted Nelson's lifelong endeavor to forge a _uniquely digital_ alternative to paper remains a radical proposition. Xanadu is a complex and nuanced project with a variety of propositions, but the one in particular that I'm particularly interested in is _parallel, side by side browsing of pages with visible links between_. This design for a information browser was first introduced in the 1960's, and remains one of the core unimplemented parts of the Xanadu project.
+Perhaps the single most rich and inspiring instance of an idea for a digital tool I've come across is [Project Xanadu](https://xanadu.com/). Ted Nelson's lifelong endeavor to forge a _uniquely digital_ alternative to paper remains a radical proposition. Xanadu is a complex and nuanced project with a variety of design propositions, but the one in particular that I'm particularly interested in is _parallel, side by side browsing of pages with visible links between_. This design for a information browser was first introduced in the 1960's, and remains one of the core unimplemented parts of the Xanadu project.
 
 There have been relatively few attempts to prototype Nelson's designs outside [he and his collaborators' efforts](https://xanadu.com/xUniverse-D6). While parallel browsing of pages with visible links seems like a compelling idea theoretically, it's hard to evaluate the design without some kind of prototype. There is just [one prototype of this interface](https://www.xanadu.com/xanademos/MoeJusteOrigins.html), and it only operates with a small set of example pages. **I wanted to implement the design functionally so the interface could be evaluated in a more qualitative way; _what is it really like to use?_**
 
 # The interface design
 
-I started in a fairly unusual situation: I would need to implement a prototype of an interface that had few specifications other than a few defining characteristics:
+<!-- TODO mention its age and how it was built for a time before the internet -->
+
+I started in a fairly unusual situation: I would need to implement a prototype of an interface that was designed before the internet, before the mouse and keyboard, and before personal computers. The core idea, though, seemed fairly simple:
 
 1. Pages can be viewed side by side in the two dimensional environment
 2. There are hyperlinks between pages
