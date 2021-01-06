@@ -9,13 +9,11 @@ excerpt: A quick interactive prototype of an old and still unrealized way to tra
 
 # Xandau and the potential richness of parallel browsing
 
-Perhaps the single most rich and inspiring instance of an idea for a digital tool I've come across is [Project Xanadu](https://xanadu.com/). Ted Nelson's lifelong endeavor to forge a _uniquely digital_ alternative to paper remains a radical proposition. Xanadu is a complex and nuanced project with a variety of design propositions, but the one in particular that I'm particularly interested in is _parallel, side by side browsing of pages with visible links between_. This design for a information browser was first introduced in the 1960's, and remains one of the core unimplemented parts of the Xanadu project.
+Perhaps the single most rich and inspiring instance of an idea for a digital tool I've come across is [Project Xanadu](https://xanadu.com/). Ted Nelson's lifelong endeavor to forge a _uniquely digital_ alternative to paper remains a radical and still largely unimplemented concept. Xanadu is a complex and nuanced project with a variety of design propositions, but the one in particular that I'm interested in is _parallel, side by side browsing of pages with visible links between_. This design for a browser was first introduced in the 1960's, and remains one of the core unimplemented parts of the Xanadu project.
 
-There have been relatively few attempts to prototype Nelson's designs outside [he and his collaborators' efforts](https://xanadu.com/xUniverse-D6). While parallel browsing of pages with visible links seems like a compelling idea theoretically, it's hard to evaluate the design without some kind of prototype. There is just [one prototype of this interface](https://www.xanadu.com/xanademos/MoeJusteOrigins.html), and it only operates with a small set of example pages. **I wanted to implement the design functionally so the interface could be evaluated in a more qualitative way; _what is it really like to use?_**
+There have been relatively few attempts to prototype Nelson's designs outside [he and his collaborators' efforts](https://xanadu.com/xUniverse-D6). While parallel browsing of pages with visible links seems like a compelling idea theoretically, it's hard to evaluate the design without some kind of prototype. There is just [one prototype of this interface](https://www.xanadu.com/xanademos/MoeJusteOrigins.html), and it only operates with a small set of example pages. **I wanted to implement the design so the interface could be evaluated in a more qualitative way; answering the question _what is it really like to use?_**
 
 # The interface design
-
-<!-- TODO mention its age and how it was built for a time before the internet -->
 
 I started in a fairly unusual situation: I would need to implement a prototype of an interface that was designed before the internet, before the mouse and keyboard, and before personal computers. The core idea, though, seemed fairly simple:
 
@@ -23,7 +21,7 @@ I started in a fairly unusual situation: I would need to implement a prototype o
 2. There are hyperlinks between pages
 3. Clicking a hyperlink brings the destination page up next to the origin and the link between the two is displayed visibly
 
-I went back to the source and read Nelson's original writing about his design. He calls the [links between pages and the relations that emerge _associative trails_](https://dl.acm.org/doi/pdf/10.1145/800197.806036?casa_token=H_-DtcbZqScAAAAA:IL4pRZJLTrAt_bW5P7ag_bhbguLbQHzJzV1-E6eD9IdtREm5LUQ3pfwTihgvolbmtbSjD4Beqq0I). The idea was further codified in 1972 when he and his collaborators published a report containing a physical prototype of the interface:
+Returning to the source and reading Nelson's original writing about his design was a good place to start. He calls the [links between pages and the relations that emerge _associative trails_](https://dl.acm.org/doi/pdf/10.1145/800197.806036?casa_token=H_-DtcbZqScAAAAA:IL4pRZJLTrAt_bW5P7ag_bhbguLbQHzJzV1-E6eD9IdtREm5LUQ3pfwTihgvolbmtbSjD4Beqq0I); the interface was designed to provide a way of manifesting these trails visibly. The design was further codified in 1972 when he and his collaborators published [a report](https://archive.org/details/frommemextohyper0000unse/page/245/mode/2up) containing a physical prototype of the interface:
 
 ![](/static/images/wikiviz/prototype.png)
 
