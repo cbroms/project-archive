@@ -36,12 +36,13 @@ a {
 }
 
 a:visited {
-  color: grey;
+  color: #636363;
 }
 
 hr {
   max-width: 640px;
   margin: 0;
   outline: none;
-  border-bottom: 1px solid black;
+  border: 1px solid black;
+  background-color: black;
 }
