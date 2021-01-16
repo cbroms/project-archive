@@ -45,17 +45,18 @@
   }
 
   .footer-thing > a {
-    color: grey;
+    color: #636363;
   }
 
   hr {
     margin-top: 50px;
     margin-bottom: 20px;
-    border: 1px solid grey;
+    border: 1px solid #636363;
+    background-color: #636363;
   }
 
   footer {
-    color: grey;
+    color: #636363;
     font-size: 14px;
   }
 </style>

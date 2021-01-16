@@ -31,6 +31,9 @@
   export let nextYearBreakLookup;
   export let featured;
 
+  let description =
+    "This is a repository of nearly all the projects I've worked on over the past few years, both small and large. It's a mix of websites, games, experiments, and other assorted articles of interest.";
+
   let view = "list";
 
   function changeView(newView) {
@@ -40,6 +43,13 @@
 
 <svelte:head>
   <title>Christian's Project Archive</title>
+  <link rel="canonical" href={`https://archive.christianbroms.com`} /> <meta
+  property="og:url" content={`https://archive.christianbroms.com`} />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Christian's Project Archive" />
+  <meta name="Description" content="{description}" />
+  <meta property="og:description" content="{description}" />
+  <meta property="og:image" content="cb.png" />
 </svelte:head>
 
 <HeaderComponent />
