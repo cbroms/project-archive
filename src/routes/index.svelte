@@ -32,7 +32,7 @@
   export let featured;
 
   let description =
-    "This is a repository of nearly all the projects I've worked on over the past few years, both small and large. It's a mix of websites, games, experiments, and other assorted articles of interest.";
+    "This is a repository of nearly all the projects I've worked on over the past few years, both small and large. It's a mix of websites, games, experiments, writing, and other assorted articles.";
 
   let view = "list";
 
@@ -43,51 +43,52 @@
 
 <svelte:head>
   <title>Christian's Project Archive</title>
-  <link rel="canonical" href={`https://archive.christianbroms.com`} /> <meta
-  property="og:url" content={`https://archive.christianbroms.com`} />
+  <link rel="canonical" href={`https://archive.christianbroms.com`} />
+  <meta property="og:url" content={`https://archive.christianbroms.com`} />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Christian's Project Archive" />
-  <meta name="Description" content="{description}" />
-  <meta property="og:description" content="{description}" />
+  <meta name="Description" content={description} />
+  <meta property="og:description" content={description} />
   <meta property="og:image" content="cb.png" />
 </svelte:head>
 
 <HeaderComponent />
 
-<div>
-  <h1 class="title">Christian's Project Archive</h1>
+<main>
+  <h1 class="title">My Project Archive</h1>
   <p>
     This is a repository of nearly all the projects I've worked on over the past
     few years, both small and large. It's a mix of websites, games, experiments,
-    and other assorted articles of interest.
+    writing, and other assorted articles.
   </p>
-  <hr />
+
   <ViewPicker {view} {changeView} />
 
   <h2 class="project-section-header">Featured projects</h2>
   <div class="content">
     {#each featured as post}
-    <GridListItem {post} {view} />
+      <GridListItem {post} {view} />
     {/each}
   </div>
 
   <h2 class="project-section-header">All projects</h2>
   <div class="content">
-    {#each posts as post, i} {#if i === 0}
-    <GridListYearBreak year="{new Date(post.printDate).getFullYear()}" {view} />
-    {/if}
-    <GridListItem {post} {view} />
-    {#if nextYearBreakLookup[i]}
-    <GridListYearBreak year="{nextYearBreakLookup[i]}" {view} />
-    {/if} {/each}
+    {#each posts as post, i}
+      {#if i === 0}
+        <GridListYearBreak
+          year={new Date(post.printDate).getFullYear()}
+          {view}
+        />
+      {/if}
+      <GridListItem {post} {view} />
+      {#if nextYearBreakLookup[i]}
+        <GridListYearBreak year={nextYearBreakLookup[i]} {view} />
+      {/if}
+    {/each}
   </div>
-</div>
+</main>
 
 <style>
-  hr {
-    margin: 20px 0;
-  }
-
   .project-section-header {
     margin-top: 50px;
   }

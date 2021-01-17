@@ -1,5 +1,5 @@
 ---
-title: "WebET: Eye Tracking for Usability Evaluation"
+title: "WebET: Eye Tracking for UX Research"
 date: 2020-09-01
 category: "Software"
 image: "/static/images/webet/et-heatmap.png"

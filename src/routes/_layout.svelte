@@ -1,7 +1,5 @@
 <div class="layout">
-  <main>
-    <slot></slot>
-  </main>
+  <slot />
 
   <footer>
     <hr />
@@ -13,8 +11,7 @@
       <a
         href="https://christianbroms.com"
         target="_blank"
-        rel="noopener noreferrer"
-        >about</a
+        rel="noopener noreferrer">about</a
       ></span
     >
     <span class="footer-thing">
@@ -26,8 +23,7 @@
       <a
         href="https://github.com/cbroms"
         target="_blank"
-        rel="noopener noreferrer"
-        >code</a
+        rel="noopener noreferrer">code</a
       >
     </span>
   </footer>

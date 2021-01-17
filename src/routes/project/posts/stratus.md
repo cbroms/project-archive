@@ -7,50 +7,40 @@ featured: true
 excerpt: An augmented reality app that visualizes the latest METAR weather report from any airport in the United States.
 ---
 
-# The Problem
+# The problem: it's difficult to visualize the conditions a stream of data describes
 
-**One of the major challenges faced when trying to analyze a realtime and continuous stream of data is how to structure and visualize it in a way that results in near-instantaneous understanding.** There are methods of data visualization that can display particular aspects of a dataset, such as a chart or graph. The problem is that they are limited in terms of _what kind of data can be visualized_, as well as _the speed someone is able to understand_ the data being represented.
+One of the major challenges faced when trying to analyze a realtime and continuous stream of data is how to structure and visualize it in a way that results in near-instantaneous understanding. There are methods of data visualization that can display particular aspects of a dataset, such as a chart or graph. The problem is that they are limited in terms of _what kind of data can be visualized_, as well as _the speed someone is able to understand_ the data being represented.
 
-One particular domain of data that has this problem is weather data. There's a huge amount of data being generated, and understanding it quickly is often of the utmost importance, especially for pilots.
+One particular domain of data that has this problem is weather data. There's a huge amount of data being generated, and understanding it quickly is often of the utmost importance, especially for pilots. This is why data comes in a strucured format—a [METAR](https://aviationweather.gov/metar) report—that is easily understandable for pilots who are familiar with the standard. But for those unfamiliar, the string `KDEN 170253Z 11006KT 10SM FEW150 BKN180 M03/M08 A3010 RMK AO2 SLP205 T10331083 52009` is completely unintelligable. How might we make one of these weather reports understandable to anyone near-instantly?
 
-Over the summer, I and a team of other interns ([Luke Fleck](http://lrfleck.com/), [Hannah Schenk](https://www.hannahschenk.com/), and [Connor Pan](https://github.com/NameClassified)) worked on solving this problem and creating a working prototype.
+Over the summer of 2019 while interning at Booz Allen Hamilton, I and [Luke Fleck](http://lrfleck.com/), [Hannah Schenk](https://www.hannahschenk.com/), and [Connor Pan](https://github.com/NameClassified) worked on solving this problem and creating a working prototype.
 
-# Our Solution
-
-**We used Unity to create an augmented reality app to present realtime weather data in a form that can be instantaneously understood.** This involved:
-
--   Fetching and decoding realtime weather reports provided by all airports in the United States ([METARs](https://aviationweather.gov/metar)).
--   Generating an AR environment that adapts to the current decoded report, displaying cloud levels, air pressure, wind speed and direction, and other elements.
--   Creating an app to easily facilitate entering airports and interacting with their AR environments.
-
-# Building it
+I was responsible for the design of the app and its interface, while my teammates were responsible for the engineering and art assets. 
 
 ## Design Process
 
-Our initial brainstorming sessions revolved around the kind of data that we'd be working with from the METAR reports. We were mainly concerned with how each would be visualized and where to use augmented reality versus a traditional 2D UI. The answer came from a simple question about our target users: what was it that pilots needed to know from the weather reports, and where could we aid in their understanding?
+We began by understanding the kind of data that we'd be working with from the METAR reports. How do people engage with each metric, both as a measurement and as a feeling? Temperature, for example, is easily understood as a measurement. Most people can understand 67°F in an _experiential_ way. Measurements like pressure, on the other hand, don't have the same qualities. 
 
 ![ ](/static/images/stratus/whiteboards.jpg "A compilation of whiteboard sketches during early ideation sessions")
 
-A visual is mainly useful to generate an understanding of data where simply reading or hearing numbers cannot. So, we would develop an environment representative of the airport that generated the weather data and the current conditions overhead. **We would develop three main visualizations that ranged from visually well-defined (clouds and precipitation) to abstract (air pressure) and somewhere in between (wind).**
+It was clear that there would need to be a gradient of visualization types corresponding to each metric, from from visually well-defined (clouds and precipitation) to abstract (air pressure) and somewhere in between (wind). Though the task was to create these visualizations in augmented reality, as we quickly discovered the real challenge was to find a visualization method that people could easily understand *before* moving to AR. Once in AR, the visualization could be tweaked to make it more legible and interactable. 
 
-Our design process involved extensive brainstorming sessions that included everyone on the team: our artist, the programmers, and myself. Together we worked to pull apart the data that we were working with into more manageable pieces and create a hierarchy based on our users' needs. We designed and built the app at the same time, working from very low fidelity to high and testing our assumptions at each level. Since much of the app was AR-based, we ensured the interaction methods we included were working by putting what we'd built into the hands of our users. This meant building each part of the app separately and quickly iterating, then integrating it into the overall build.
+## The interface
 
-## The 2D UI
-
-In our initial exploration of the data, it was clear that **there are some aspects of the weather report where a visualization would not provide enough information.** One example is pressure, as pilots use the pressure provided by a METAR to calibrate their altimeter. It would be important to include these values in addition to the visualization, to provide additional clarity when needed.
+In our initial exploration of the data, it was clear that there are some aspects of the weather report where a visualization would not provide enough information. It would be important to include these values in addition to the visualization, to provide additional clarity when needed. Beacuse of our short timeframe, we elected to lay a 2D interface over the AR environment rather than integrate the metrics _into_ the environment itself. 
 
 ### Designing the UI: considering interaction methods
 
-When creating a UI, my first consideration was the form of the device. Since the centerpiece of the experience would be the AR environment, it was important to design the UI such that it felt natural to overlay on the rectangular window used to look at and interact with the environment. There needed to be a clear distinction between how to interact with the environment and how to interact with the 2D UI above. I began to make many sketches considering the way that the window would be held and the most natural ways of interacting with it.
+When creating a UI, my first consideration was the form of the device; we were building for mobile phones. Since the centerpiece of the experience would be the AR environment, it was important to design the UI such that it felt natural to overlay on the rectangular window used to look at and interact with the environment. There needed to be a clear distinction between how to interact with the environment and how to interact with the 2D UI above. I began to make many sketches considering the way that the window would be held and the most natural ways of interacting with it.
 
 ![ ](/static/images/stratus/stratSketches.jpg "Some of the exploratory sketches I made around the interaction with the interface and AR environment")
 
-The information architecture that we'd developed included quite a bit of additional information that would need to be accessed. I worked on developing ways to hide and reveal this information though a quick and intuitive gesture. In the end I decided on a swipe up from the bottom to reveal a panel below. This lower panel included all of the fields from the original METAR in their decoded format.
+The information architecture that we'd developed included quite a bit of additional information—the decoded METAR values—that would need to be accessed. I worked on developing ways to hide and reveal this information though a quick and intuitive gesture. In the end I decided on a swipe up from the bottom to reveal a panel below. This lower panel included all of the fields from the original METAR.
 
 ![ ](/static/images/stratus/wire1.png "A simple mockup of the UI with the panel closed")
 
 ![ ](/static/images/stratus/wire2.png "With the panel open")
-
+<!-- 
 ### Separating 3D from 2D in the final UI design
 
 When making higher fidelity versions of the UI, I focused on creating a way to differentiate the 2D elements from the 3D background. It was clear that a solid colored background made the display feel too heavy and limited the size of the viewport a bit too much. Having no background at all resulted in too little contrast between the text and the 3D elements. I experimented with a semi-transparent background panel, but the variable background presented difficulties in keeping the text legible in all environments.
@@ -59,17 +49,13 @@ In the end, I settled on creating a blurred background so that the panel does no
 
 ![ ](/static/images/stratus/stratus1.png "A screenshot of the app showing the AR visualization of rainy weather at an airport")
 
-![ ](/static/images/stratus/stratus2.png "The panel showing additional details and specific measurements")
-
-## The AR Visualization
+![ ](/static/images/stratus/stratus2.png "The panel showing additional details and specific measurements") -->
 
 ### Promoting legibility through a 3D visualization
 
-For the augmented reality environment, it was important that just that data that was most often needed by pilots be presented. This meant focusing on how to visualize specific parts of the METAR report, like clouds and wind. The answer was to go with the most intuitive solution: what do these elements look like?
+By building on people's pre-existing understanding of what weather looks like physically, we could create something that was _instantaneously understandable_ without any additional training.
 
-**By building on people's pre-existing understanding of what weather looks like physically, we could create something that was _instantaneously understandable_ without any additional training.**
-
-We created many versions of each of the three visualizations and tested them out with users. We iterated on each and gradually improved how fast and how well they could be interpreted.
+We created many versions of each of the three visualizations and tested them out with users. We iterated on each and gradually improved how fast and how well they could be interpreted. One particularly challenging visualization was pressure, but by reducing it down we got it to a very simple visual: 
 
 ![ ](/static/images/stratus/pressure.gif)
 
@@ -77,10 +63,18 @@ A key part of the visualizations was ensuring that they were realistic enough to
 
 ### Considering interactivity
 
-It was also important to consider how people would interact with the AR environment. **We were sure to provide interaction methods such as panning, scaling and tapping, which we developed after testing a number of methods.** This area in particular was quite a challenge, as we were working in a space where there aren't many assumptions about how interaction works, and there aren't any implicit controls in an AR visualization. To address this, we provided some explicit instructions during the placement process that encouraged the user to try tapping and panning around the scene.
+Most of the design for AR interactivity came from handing a phone with the visualization on it to people and seeing what they tried to do. Most of the time they tried to pinch (to zoom in) and tap on some element in the scene (the clouds, or wind visual). We implemented what they expected, then refined.   
 
 ## The Final Prototype
 
 ![ ](/static/images/stratus/stratus.gif)
 
-Our final iOS and Android app integrates a number of realtime data sources to create one simple visualization of the weather at any airport in the United States, to promote instantaneous interpretation of the current conditions.
+
+
+<!-- **We used Unity to create an augmented reality app to present realtime weather data in an experiential form that can be instantly understood.** This involved:
+
+-   Fetching and decoding realtime METAR reports provided by all airports in the United States.
+-   Generating an AR environment that adapts to the current decoded report, displaying cloud levels, air pressure, wind speed and direction, and other elements.
+-   Creating an app to easily facilitate entering airports and interacting with their AR environments.
+
+# Building it -->

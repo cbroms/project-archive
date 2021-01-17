@@ -20,30 +20,35 @@
 
 <svelte:head>
   <title>{post.title} / Christian's Project Archive</title>
-  <link rel="canonical"
-  href={`https://archive.christianbroms.com/project/${post.slug}`} /> <meta
-  property="og:url"
-  content={`https://archive.christianbroms.com/project/${post.slug}`} />
+  <link
+    rel="canonical"
+    href={`https://archive.christianbroms.com/project/${post.slug}`}
+  />
+  <meta
+    property="og:url"
+    content={`https://archive.christianbroms.com/project/${post.slug}`}
+  />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="{post.title || post.title}" />
-  <meta name="Description" content="{post.excerpt || post.title}" />
-  <meta property="og:description" content="{post.excerpt}" />
-  <meta property="og:image" content="{post.image}" />
+  <meta property="og:title" content={post.title || post.title} />
+  <meta name="Description" content={post.excerpt || post.title} />
+  <meta property="og:description" content={post.excerpt} />
+  <meta property="og:image" content={post.image} />
 </svelte:head>
 
-<HeaderComponent path="{post.slug}" />
+<HeaderComponent path={post.slug} />
 
-<header>
-  <p>{post.printDate}</p>
-  <h1 class="title">{post.title}</h1>
-  <!-- <p><strong>{post.excerpt ? "Summary" : ""}</strong></p> -->
-  <p class="excerpt"><em>{post.excerpt || ""}</em></p>
-  <hr />
-</header>
+<main>
+  <div>
+    <p>{post.printDate}</p>
+    <h1 class="title">{post.title}</h1>
+    <!-- <p><strong>{post.excerpt ? "Summary" : ""}</strong></p> -->
+    <p class="excerpt"><em>{post.excerpt || ""}</em></p>
+  </div>
 
-<div class="container">
-  <article class="content">{@html post.html}</article>
-</div>
+  <div class="container">
+    <article class="content">{@html post.html}</article>
+  </div>
+</main>
 
 <style>
   .container {
